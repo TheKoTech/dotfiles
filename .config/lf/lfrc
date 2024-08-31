@@ -34,17 +34,6 @@ cmd code ${{
 map oc :code
 map oz $zed $f
 
-# cmd o_menu ${{
-#   read -n 1 -p "Enter command (c/w/s/z): " choice
-#   echo
-#   case $choice in
-#     c) code . ;;
-#     w) code . --add ;;
-#     z) zed . ;;
-#     *) lf -remote "send $id o_menu_show_commands" ;;
-#   esac
-# }}
-
 cmd extract ${{
     set -f
     case $f in
@@ -57,6 +46,7 @@ cmd extract ${{
     esac
 }}
 
+# compress with tar
 cmd tar ${{
     set -f
     mkdir $1

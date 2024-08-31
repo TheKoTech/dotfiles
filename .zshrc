@@ -2,7 +2,32 @@
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
+
+# kitty pic
+if [ "$TERM" = "xterm-kitty" ]; then
+  kitten icat --align left  ~/.config/kitty/kitty-logo.png
+fi
+
+parse_git_dirty() {
+  git_status="$(git status 2> /dev/null)"
+  [[ "$git_status" =~ "Changes to be committed:" ]] && echo -n "%F{green}·%f"
+  [[ "$git_status" =~ "Changes not staged for commit:" ]] && echo -n "%F{yellow}·%f"
+  [[ "$git_status" =~ "Untracked files:" ]] && echo -n "%F{red}·%f"
+}
+
+setopt prompt_subst
+
+NEWLINE=$'\n'
+
+autoload -Uz vcs_info # enable vcs_info
+precmd () { vcs_info } # always load before displaying the prompt
+zstyle ':vcs_info:git*' formats ' ↣ (%F{254}%b%F{245})' # format $vcs_info_msg_0_
+
+PS1='%F{254}%n%F{245} ↣ %F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_} $(parse_git_dirty)$NEWLINE%F{254}$%f '
+
+export HYPRSHOT_DIR=/path/to/your/screenshot/directory
+
+echo 'source /usr/share/nvm/init-nvm.sh'
 
 setopt histignorealldups sharehistory
 
@@ -43,3 +68,58 @@ lfcd () {
     # `command` is needed in case `lfcd` is aliased to `lf`
     cd "$(command lf -print-last-dir "$@")"
 }
+
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -g -A key
+
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Insert]="${terminfo[kich1]}"
+key[Backspace]="${terminfo[kbs]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[PageUp]="${terminfo[kpp]}"
+key[PageDown]="${terminfo[knp]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
+
+# setup key accordingly
+[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
+[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
+[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
+[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}"  backward-delete-char
+[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"     delete-char
+[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"         up-line-or-history
+[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"       down-line-or-history
+[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"       backward-char
+[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"      forward-char
+[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"     beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
+
+key[Control-Left]="${terminfo[kLFT5]}"
+key[Control-Right]="${terminfo[kRIT5]}"
+
+[[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
+[[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+#   exec Hyprland
+# fi
