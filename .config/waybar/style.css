@@ -1,0 +1,132 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", serif;
+    font-size: 13px;
+    color: #cdd6f4;
+  }
+
+  window#waybar {
+    background: transparent;
+  }
+
+  #custom-launcher,
+  #custom-updates,
+  #backlight,
+  #pulseaudio,
+  #cpu,
+  #memory,
+  #battery,
+  #tray,
+  #clock,
+  #network,
+  #keyboard-state,
+  #language {
+    background: #1f2131;
+    margin: 4px 0 0;
+    padding: 2px 8px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  #window {
+    background: transparent;
+  }
+
+  #window * {
+    color: rgba(240, 243, 248, 0.67);
+  }
+
+  #workspaces button {
+    background: #1f2131;
+    padding: 2px 8px;
+    margin: 4px 4px 0;
+    border-radius: 8px;
+    border: 2px solid transparent;
+  }
+
+  /* @todo */
+  /* #workspaces button:hover {
+    background: #ff0000;
+  } */
+
+  #custom-launcher {
+    color: #7cb1ff;
+    margin: 0;
+    margin-left: 8px;
+    margin-top: 4px;
+    margin-right: 12px;
+    min-width: 28px;
+    padding-left: 0px;
+    padding-right: 8px;
+    font-size: 20px;
+  }
+
+  #workspaces button.active {
+    border-color: #7cb1ff;
+  }
+
+  #workspaces button.active * {
+    color: #7eb2ff;
+    /* font-weight: bold; */
+  }
+
+  #backlight {
+    padding-left: 12px;
+  }
+
+  #battery {
+    padding-right: 12px;
+  }
+
+  #backlight {
+    border-radius: 8px 0 0 8px;
+  }
+
+  #network, #memory {
+    border-radius: 0;
+  }
+
+  #battery {
+    border-radius: 0 8px 8px 0;
+  }
+
+  #custom-updates,
+  #battery,
+  #tray,
+  #pulseaudio,
+  #language {
+    margin-right: 8px;
+  }
+
+  #custom-updates,
+  #pulseaudio,
+  #cpu,
+  #memory,
+  #battery {
+    color: #a6e3a1;
+  }
+
+  #tray {
+    margin-right: 5px;
+  }
+
+  #clock {
+    /* background: #f9e2af;
+    color: #1e1e2e; */
+    margin-right: 8px;
+    /* font-weight: bold; */
+  }
+
+  #network,
+  #language {
+    color: #7cb1ff;
+  }
+
+  /* #custom-updates:hover,
+  #pulseaudio:hover,
+  #cpu:hover,
+  #memory:hover,
+  #battery:hover,
+  #network:hover,
+  #language:hover {
+    background: #313240;
+  } */

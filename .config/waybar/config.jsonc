@@ -1,0 +1,360 @@
+// -*- mode: jsonc -*-
+{
+	"modules-left": ["custom/launcher", "hyprland/workspaces"],
+
+	"modules-center": ["hyprland/window"],
+
+	"modules-right": [
+		// "mpd",
+		// "idle_inhibitor",
+		// "power-profiles-daemon",
+		"pulseaudio",
+		"hyprland/language",
+		"tray",
+		// "cpu",
+		"backlight",
+		"memory",
+		"network",
+		"battery",
+		"clock"
+	],
+
+	// ============
+	// === LEFT ===
+	// ============
+
+	"custom/launcher": {
+		"format": "",
+		"on-click": "wofi --show drun",
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{name}",
+		"on-click": "activate",
+		"sort-by-number": true
+	},
+
+	// ==============
+	// === MIDDLE ===
+	// ==============
+
+	"hyprland/window": {
+		"interval": 1,
+		"max-length": 40
+	},
+
+	// =============
+	// === RIGHT ===
+	// =============
+
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "EN",
+		"format-ru": "RU",
+		"min-length": 2,
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+	},
+
+	"tray": {
+		"spacing": 10
+	},
+
+	"clock": {
+		"format": "{:%Y.%m.%d %H:%M}",
+		"tooltip": false
+	},
+
+	"cpu": {
+		"format": "{usage}% ",
+		"tooltip": false
+	},
+
+	"memory": {
+		"format": "{}% "
+	},
+
+	"backlight": {
+		"format": "{percent}% {icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""]
+	},
+
+	"battery": {
+		"format-fu": "{capacity}% 󰁹",
+		"format-95": "{capacity}% 󰂂",
+		"format-85": "{capacity}% 󰂁",
+		"format-75": "{capacity}% 󰂀",
+		"format-65": "{capacity}% 󰁿",
+		"format-55": "{capacity}% 󰁾",
+		"format-45": "{capacity}% 󰁽",
+		"format-35": "{capacity}% 󰁼",
+		"format-25": "{capacity}% 󰁻",
+		"format-15": "{capacity}% 󰁺",
+		"format-05": "{capacity}% 󰂎",
+		"format-charging-fu": "{capacity}% 󰂅",
+		"format-charging-95": "{capacity}% 󰂋",
+		"format-charging-85": "{capacity}% 󰂊",
+		"format-charging-75": "{capacity}% 󰢞",
+		"format-charging-65": "{capacity}% 󰂉",
+		"format-charging-55": "{capacity}% 󰢝",
+		"format-charging-45": "{capacity}% 󰂈",
+		"format-charging-35": "{capacity}% 󰂇",
+		"format-charging-25": "{capacity}% 󰂆",
+		"format-charging-15": "{capacity}% 󰢜",
+		"format-charging-05": "{capacity}% 󰢟",
+		"interval": 1,
+		"states": {
+			"fu": 100,
+			"95": 95,
+			"85": 85,
+			"75": 75,
+			"65": 65,
+			"55": 55,
+			"45": 45,
+			"35": 35,
+			"25": 25,
+			"15": 15,
+			"05": 5
+		},
+		"tooltip": true
+	},
+
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "{icon}",
+		"format-ethernet": "",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"min-length": 2,
+		// "format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "󰈁",
+		"format-icons": {
+			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+		}
+	},
+
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		// "format-bluetooth": "{volume}% {icon}",
+		// "format-bluetooth-muted": " {icon}",
+		"format-muted": "0% ",
+		// "format-source": "{volume}% ",
+		// "format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			// "hands-free": "",
+			// "headset": "",
+			// "phone": "",
+			// "portable": "",
+			// "car": "",
+			"default": ["", "", ""]
+		}
+		// "on-click": "pavucontrol"
+	}
+	// "mpd": {
+	//   "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+	//   "format-disconnected": "Disconnected ",
+	//   "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+	//   "unknown-tag": "N/A",
+	//   "interval": 5,
+	//   "consume-icons": {
+	//     "on": " "
+	//   },
+	//   "random-icons": {
+	//     "off": "<span color=\"#f53c3c\"></span> ",
+	//     "on": " "
+	//   },
+	//   "repeat-icons": {
+	//     "on": " "
+	//   },
+	//   "single-icons": {
+	//     "on": "1 "
+	//   },
+	//   "state-icons": {
+	//     "paused": "",
+	//     "playing": ""
+	//   },
+	//   "tooltip-format": "MPD (connected)",
+	//   "tooltip-format-disconnected": "MPD (disconnected)"
+	// },
+	// "battery#bat2": {
+	//   "bat": "BAT2"
+	// },
+	// "power-profiles-daemon": {
+	//   "format": "{icon}",
+	//   "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+	//   "tooltip": true,
+	//   "format-icons": {
+	//     "default": "",
+	//     "performance": "",
+	//     "balanced": "",
+	//     "power-saver": ""
+	//   }
+	// },
+
+	// "custom/media": {
+	//   "format": "{icon} {}",
+	//   "return-type": "json",
+	//   "max-length": 40,
+	//   "format-icons": {
+	//     "spotify": "",
+	//     "default": "🎜"
+	//   },
+	//   "escape": true,
+	//   "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+	//   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	// },
+
+	// "custom/power": {
+	//   "format": "⏻ ",
+	//   "tooltip": false,
+	//   "menu": "on-click",
+	//   "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+	//   "menu-actions": {
+	//     "shutdown": "shutdown",
+	//     "reboot": "reboot",
+	//     "suspend": "systemctl suspend",
+	//     "hibernate": "systemctl hibernate"
+	//   }
+	// }
+}
+/*
+// -*- mode: json -*-
+
+{
+  "layer": "top",
+
+  "spacing": 0,
+
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+
+  "modules-center": ["hyprland/window"],
+
+  "modules-right": [
+    // "custom/updates",
+    "pulseaudio",
+    "backlight",
+    // "cpu",
+    "memory",
+    "battery",
+    "hyprland/language",
+    // "tray",
+    "clock"
+  ],
+
+  // "keyboard-state": {
+  //   "numlock": true,
+  //   "capslock": true,
+  //   "format": "{name}|",
+  //   // "format-en": "EN",
+  //   // "format-ru": "RU",
+  //   // "device-path": "/dev/input/event4",
+  //   "min-length": 2
+  // },
+
+  "backlight": {
+    "format": "{icon} {}%",
+    "format-icons": ["", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨4"]
+  },
+
+  // "cpu": {
+  //   "interval": 2,
+  //   "format": " {usage}%",
+  //   "format-alt": " {}%"
+  // },
+
+  "memory": {
+    "interval": 2,
+    "format": " {}%"
+  },
+
+  "battery": {
+    "format-fu": "{capacity}% 󰁹",
+    "format-95": "{capacity}% 󰂂",
+    "format-85": "{capacity}% 󰂁",
+    "format-75": "{capacity}% 󰂀",
+    "format-65": "{capacity}% 󰁿",
+    "format-55": "{capacity}% 󰁾",
+    "format-45": "{capacity}% 󰁽",
+    "format-35": "{capacity}% 󰁼",
+    "format-25": "{capacity}% 󰁻",
+    "format-15": "{capacity}% 󰁺",
+    "format-05": "{capacity}% 󰂎",
+
+    "format-charging-fu": "{capacity}% 󰂅",
+    "format-charging-95": "{capacity}% 󰂋",
+    "format-charging-85": "{capacity}% 󰂊",
+    "format-charging-75": "{capacity}% 󰢞",
+    "format-charging-65": "{capacity}% 󰂉",
+    "format-charging-55": "{capacity}% 󰢝",
+    "format-charging-45": "{capacity}% 󰂈",
+    "format-charging-35": "{capacity}% 󰂇",
+    "format-charging-25": "{capacity}% 󰂆",
+    "format-charging-15": "{capacity}% 󰢜",
+    "format-charging-05": "{capacity}% 󰢟",
+
+    "interval": 1,
+    "states": {
+      "fu": 100,
+      "95": 95,
+      "85": 85,
+      "75": 75,
+      "65": 65,
+      "55": 55,
+      "45": 45,
+      "35": 35,
+      "25": 25,
+      "15": 15,
+      "05": 5
+    },
+    "tooltip": true
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+
+  //   "custom/updates": {
+  //     "format": "{} Update(s)",
+  //     "exec": "checkupdates | wc -l",
+  //     "exec-if": "exit 0",
+  //     "interval": 60,
+  //     "on-click": "kitty -e paru -Syu"
+  //   },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+
+  "pulseaudio": {
+    // "tooltip": false,
+    // "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": " {volume}%",
+    // "on-click": "pavucontrol",
+    // "on-click-right": "pamixer -t",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+
+  "clock": {
+    "format": "{:%Y.%m.%d %H:%M}",
+    "tooltip": false
+  }
+}
+*/
+/*
+⏻
+󱓝
+󱃲
+
+
+
+
+*/
