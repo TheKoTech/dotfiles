@@ -123,3 +123,5 @@ export NVM_DIR="$HOME/.nvm"
 # if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #   exec Hyprland
 # fi
+
+export PATH=$HOME/.local/bin:$PATH
