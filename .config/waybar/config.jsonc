@@ -54,7 +54,8 @@
 	},
 
 	"clock": {
-		"format": "{:%Y.%m.%d %H:%M}",
+		// "format": "{:%Y.%m.%d %H:%M}",
+		"format": "{:%H:%M %d.%m.%Y}",
 		// "format": "",
 		"timezone": "Asia/Yekaterinburg",
 		"tooltip": false
@@ -128,11 +129,11 @@
 	},
 
 	"pulseaudio": {
-		"format": "{volume}% {icon} ",
+		"format": "{format_source} {volume}% {icon} ",
 		// "format-bluetooth": "{volume}% {icon}",
 		// "format-bluetooth-muted": " {icon}",
 		"format-muted": "0% ",
-		// "format-source": "{volume}% ",
+		"format-source": "{volume}% ",
 		// "format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
