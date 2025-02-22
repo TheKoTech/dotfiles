@@ -1,12 +1,17 @@
 // -*- mode: jsonc -*-
 {
+	// ===============
+	// === GENERAL ===
+	// ===============
+
 	"layer": "top",
 	"height": 38,
 
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": [
-		"memory",
+		// "cpu",
+		// "memory",
 		"tray",
 		"network",
 		"hyprland/language",
@@ -33,13 +38,31 @@
 	// ==============
 
 	"hyprland/window": {
-		"interval": 1,
-		"max-length": 40
+		"max-length": 40,
+		"rewrite": {
+			".* - Visual Studio Code": "VS Code",
+			".* - Chromium": "Chromium"
+		}
 	},
 
 	// =============
 	// === RIGHT ===
 	// =============
+
+	// i don't really need that
+	"cpu": {
+		"format": "{usage}%  ",
+		"tooltip": false
+	},
+
+	// i don't really need that
+	"memory": {
+		"format": "{}%  "
+	},
+
+	"tray": {
+		"spacing": 8
+	},
 
 	"hyprland/language": {
 		"format": "{}",
@@ -49,25 +72,16 @@
 		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
 
-	"tray": {
-		"spacing": 12
-	},
-
-	"clock": {
-		// "format": "{:%Y.%m.%d %H:%M}",
-		"format": "{:%H:%M %d.%m.%Y}",
-		// "format": "",
-		"timezone": "Asia/Yekaterinburg",
-		"tooltip": false
-	},
-
-	// "cpu": {
-	// 	"format": "{usage}% ",
-	// 	"tooltip": false
-	// },
-
-	"memory": {
-		"format": "{}%  "
+	"network": {
+		"format-wifi": "{icon}",
+		"format-ethernet": "",
+		"tooltip": true,
+		"tooltip-format": "{ifname}",
+		"min-length": 2,
+		"format-disconnected": "󰈂",
+		"format-icons": {
+			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+		}
 	},
 
 	"backlight": {
@@ -115,63 +129,51 @@
 		"tooltip": true
 	},
 
-	"network": {
-		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "{icon}",
-		"format-ethernet": "",
-		"tooltip-format": "{ifname} via {gwaddr}",
-		"min-length": 2,
-		// "format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "󰈁",
+	"pulseaudio": {
+		"format": "{format_source} {volume}% {icon} ",
+		"format-muted": "0% ",
+		"format-source": "{volume}% ",
 		"format-icons": {
-			"wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+			"headphone": "",
+			"default": ["", "", ""]
 		}
 	},
 
-	"pulseaudio": {
-		"format": "{format_source} {volume}% {icon} ",
-		// "format-bluetooth": "{volume}% {icon}",
-		// "format-bluetooth-muted": " {icon}",
-		"format-muted": "0% ",
-		"format-source": "{volume}% ",
-		// "format-source-muted": "",
-		"format-icons": {
-			"headphone": "",
-			// "hands-free": "",
-			// "headset": "",
-			// "phone": "",
-			// "portable": "",
-			// "car": "",
-			"default": ["", "", ""]
-		}
-		// "on-click": "pavucontrol"
+	"clock": {
+		"format": "{:%H:%M:%S %d.%m.%Y}",
+		"timezone": "Asia/Yekaterinburg",
+		"tooltip": false,
+		"interval": 1,
+		"on-click": "gnome-calendar"
+	},
+
+	// it no worky, got it from the official docs
+	"mpd": {
+		"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+		"interval": 2,
+		"consume-icons": {
+			"on": " " // Icon shows only when "consume" is on
+		},
+		"random-icons": {
+			"off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+			"on": " "
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": "1 "
+		},
+		"state-icons": {
+			"paused": "",
+			"playing": ""
+		},
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)"
 	}
-	// "mpd": {
-	//   "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-	//   "format-disconnected": "Disconnected ",
-	//   "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-	//   "unknown-tag": "N/A",
-	//   "interval": 5,
-	//   "consume-icons": {
-	//     "on": " "
-	//   },
-	//   "random-icons": {
-	//     "off": "<span color=\"#f53c3c\"></span> ",
-	//     "on": " "
-	//   },
-	//   "repeat-icons": {
-	//     "on": " "
-	//   },
-	//   "single-icons": {
-	//     "on": "1 "
-	//   },
-	//   "state-icons": {
-	//     "paused": "",
-	//     "playing": ""
-	//   },
-	//   "tooltip-format": "MPD (connected)",
-	//   "tooltip-format-disconnected": "MPD (disconnected)"
-	// },
+
 	// "battery#bat2": {
 	//   "bat": "BAT2"
 	// },
@@ -185,18 +187,5 @@
 	//     "balanced": "",
 	//     "power-saver": ""
 	//   }
-	// },
-
-	// "custom/media": {
-	//   "format": "{icon} {}",
-	//   "return-type": "json",
-	//   "max-length": 40,
-	//   "format-icons": {
-	//     "spotify": "",
-	//     "default": "🎜"
-	//   },
-	//   "escape": true,
-	//   "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-	//   // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
 	// },
 }

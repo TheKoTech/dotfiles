@@ -3,9 +3,9 @@
 autoload -Uz promptinit
 promptinit
 
-# kitty pic
+# kitty pic 🐱
 if [ "$TERM" = "xterm-kitty" ]; then
-  kitten icat --align left  ~/.config/kitty/kitty-logo.png
+  kitten icat --align left --use-window-size 21,9,256,256  ~/.config/kitty/kitty-logo.png
 fi
 
 parse_git_dirty() {
@@ -27,16 +27,14 @@ PS1='%F{254}%n%F{245} ↣ %F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_}
 
 export HYPRSHOT_DIR=/path/to/your/screenshot/directory
 
-echo 'source /usr/share/nvm/init-nvm.sh'
-
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=2000
+SAVEHIST=2000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -120,8 +118,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#   exec Hyprland
-# fi
-
 export PATH=$HOME/.local/bin:$PATH
+source /usr/share/nvm/init-nvm.sh
+
+export CHROME_BIN=/usr/bin/chromium
+
+# bun completions
+[ -s "/home/welnyr/.bun/_bun" ] && source "/home/welnyr/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
