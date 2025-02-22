@@ -1,1 +1,2 @@
-So I learned you call such repos "dotfiles", so here's that
+Minimal glassmorphism keyboard-oriented rice
+
