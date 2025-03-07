@@ -40,8 +40,10 @@
 	"hyprland/window": {
 		"max-length": 40,
 		"rewrite": {
-			".* - Visual Studio Code": "VS Code",
-			".* - Chromium": "Chromium"
+			".* - Visual Studio Code$": "Visual Studio Code",
+			"^Discord.*": "Discord",
+			".* - Obsidian v[\\.\\d]*": "Obsidian",
+			".* - Chromium$": "Chromium"
 		}
 	},
 

@@ -1,0 +1,67 @@
+/**
+* @name Novum
+* @author Przemec & Net-Runner
+* @description Red galaxy theme enhanced with couple of addons and small features.
+* @version 5.8.4
+* @source https://github.com/przemec/Novum
+* @website https://przemec.github.io/Novum/
+*/
+
+/*
+CONTACT ME ON DISCORD IF YOU NEED ANY HELP WITH THEME: przemec (before Discord's nicks update: tomec#4771)
+
+IMPORTANT: CHOOSE DARK THEME VERSION IN DISCORD APPEARANCE SETTINGS!
+IMPORTANT: SOME OF FEATURES ARE TESTED ONLY ON WINDOWS VERSION OF DISCORD!
+*/
+
+/*
+===================================================================
+*/
+
+@import url(https://przemec.github.io/Novum/theme.css);
+
+/*
+===================================================================
+*/
+
+/*
+CUSTOMIZABLE BACKGROUND IMAGE AND MAIN COLORS BELOW*
+
+*IF YOU WANT TO CUSTOMIZE THOSE COLORS, CHANGE root TO :root
+*/
+
+:root {
+	--app-background: none;
+	--main-color: #3366ff;
+	--main-color-selected: #4477ff;
+	--main-color-semitransparent: #3366ff26;
+	--main-color-semitransparent-selected: #3366ff4d;
+	--accent-color: #33ccff;
+	--accent-color-semitransparent: #33ccff18;
+	--accent-saturated: #00bfff;
+	--accent-desaturated: #7ab7cc;
+	--button-text: #dddddd;
+	--button-text-selected: #ffffff;
+	--profile-background: none;
+	--profile-activity: #1a4d99;
+	--scroll-thumb-color: #4d94ff;
+}
+
+body {
+	background: rgba(0 0 0 / 0.6);
+}
+
+/*
+===================================================================
+*/
+
+/*
+Credits:
+- Original (not edited) background is taken (with the consent of author) and edited from 'Nova' theme made by https://github.com/din0s/
+- The idea of icons in Settings sidebar is taken from ClearVision theme originally designed by https://github.com/Zerthox
+- Most of custom icons come from Material Design Icons project: https://materialdesignicons.com/
+- The idea of animated activity in profile popout is taken from Comfy theme: https://github.com/NYRI4/Comfy
+
+Author of theme: https://github.com/przemec
+Special thanks for help to: https://github.com/net-runner
+*/
