@@ -11,6 +11,7 @@ packages=(
   "hyprpolkitagent" "hyprlock" "hyprshot-git"
   "hyprsunset" "hyprcursor" "hyprsysteminfo"
   "zsh" "nano" "vi" "vim" "lf" "tmux"
+  "dunst" "fuzzel"
   "lazygit" "arttime-git" "nvm"
   "nautilus" "pavucontrol" "vlc"
   "chromium" "obsidian"
