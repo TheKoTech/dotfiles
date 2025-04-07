@@ -3,7 +3,7 @@
 autoload -Uz promptinit
 promptinit
 
-# kitty pic 🐱
+# ket 🐱
 if [ "$TERM" = "xterm-kitty" ]; then
   kitten icat --align left --use-window-size 21,9,256,256  ~/.config/kitty/kitty-logo.png
 fi
@@ -65,6 +65,20 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 lfcd () {
     # `command` is needed in case `lfcd` is aliased to `lf`
     cd "$(command lf -print-last-dir "$@")"
+}
+
+art() {
+  if [[ $# -gt 0 ]]; then
+    # Join all arguments with spaces to form the text
+    local text="$*"
+    arttime --nolearn -a kissingcats -b kissingcats2 --theme light --hours 24 -t "$text"
+  else
+    arttime --nolearn -a kissingcats -b kissingcats2 --theme light --hours 24 -t "\"Meow meow meow mrrp mrmeow\" — the cats, probably."
+  fi
+}
+
+art-tow() {
+  arttime --nolearn --theme light --hours 24 -a saturn2 -t "The Outer Worlds"
 }
 
 # create a zkbd compatible hash;
