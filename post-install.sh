@@ -27,7 +27,7 @@ echo "Selected packages: ${selected[@]}"
 
 echo "Installing..."
 if [ -n "$selected" ]; then
-  paru -Syu --noconfirm $selected
+  paru -Syu --noconfirm "${selected[@]}"
 
     if [[ " ${selected[*]} " =~ " zsh " ]]; then
     echo "Setting up ZSH..."
