@@ -1,22 +1,9 @@
 sudo pacman -Syu --noconfirm --needed gum base-devel git
 
-# Find the first non-root user with sudo privileges
-build_user=$(grep -m1 "sudo\|wheel" /etc/group | cut -d: -f4 | cut -d, -f1)
-
-# If no sudo user found, use the current non-root user
-if [ -z "$build_user" ] || [ "$build_user" = "root" ]; then
-  build_user=$(ls /home | head -n1)
-fi
-
-echo "Using build user: $build_user"
-
 cd /tmp
-rm -rf /tmp/paru
 git clone https://aur.archlinux.org/paru.git
-chown -R $build_user:$build_user /tmp/paru
-
-# makepkg won't let me build with `sudo`, so now this is a thing
-sudo -u $build_user bash -c "cd /tmp/paru && makepkg -si --noconfirm"
+cd paru
+makepkg -si --noconfirm
 
 echo "Select packages to install:"
 packages=(
