@@ -7,17 +7,32 @@ makepkg -si --noconfirm
 
 echo "Select packages to install:"
 packages=(
+  # hyprland
   "hyprland" "xdg-desktop-portal-hyprland"
   "hyprpolkitagent" "hyprlock" "hyprshot-git"
   "hyprsunset" "hyprcursor" "hyprsysteminfo"
+
+  # terminal stuff
   "zsh" "nano" "vi" "vim" "lf" "tmux"
-  "dunst" "fuzzel" "waybar"
+
+  # basic apps
+  "kitty" "dunst" "fuzzel" "waybar" "bemoji"
+
+  # fonts
+  "ttf-jetbrains-mono" "ttf-jetbrains-mono-nerd"
+  "ttf-font-awesome"
+
+  # terminal-based apps that I don't need all the time
   "lazygit" "arttime-git" "nvm"
+
+  # utility
   "nautilus" "pavucontrol" "vlc"
-  "chromium" "obsidian"
+
+  # other
+  "chromium" "obsidian" "syncthing"
   "telegram-desktop" "vesktop"
   "visual-studio-code-bin" "zed"
-  "krita" "steam"
+  "krita" "steam" "zoom"
   "obs-studio" "audacity"
 )
 
