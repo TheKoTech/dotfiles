@@ -1,9 +1,15 @@
 sudo pacman -Syu --noconfirm --needed gum base-devel git
 
-cd /tmp
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
+if ! command -v paru &>/dev/null; then
+  if gum confirm "Install paru?"; then
+    cd /tmp
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+  fi
+else
+  echo "paru is already installed"
+fi
 
 echo "Select packages to install:"
 packages=(
@@ -44,7 +50,7 @@ echo "Installing..."
 if [ -n "$selected" ]; then
   paru -Syu --noconfirm "${selected[@]}"
 
-    if [[ " ${selected[*]} " =~ " zsh " ]]; then
+  if [[ " ${selected[*]} " =~ " zsh " ]]; then
     echo "Setting up ZSH..."
 
     if gum confirm "Set ZSH as default shell?"; then
