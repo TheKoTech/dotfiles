@@ -8,46 +8,53 @@ if ! command -v paru &>/dev/null; then
     makepkg -si --noconfirm
   fi
 else
-  echo "paru is already installed"
+  echo "Paru is already installed"
 fi
 
-echo "Select packages to install:"
-packages=(
-  # hyprland
-  "hyprland" "xdg-desktop-portal-hyprland"
-  "hyprpolkitagent" "hyprlock" "hyprshot-git"
-  "hyprsunset" "hyprcursor" "hyprsysteminfo"
+# Initialize empty array for selected packages
+selected=()
 
-  # terminal stuff
-  "zsh" "nano" "vi" "vim" "lf" "tmux"
-
-  # basic apps
-  "kitty" "dunst" "fuzzel" "waybar" "bemoji"
-
-  # fonts
-  "ttf-jetbrains-mono" "ttf-jetbrains-mono-nerd"
-  "ttf-font-awesome"
-
-  # terminal-based apps that I don't need all the time
-  "lazygit" "arttime-git" "nvm"
-
-  # utility
-  "nautilus" "pavucontrol" "vlc"
-
-  # other
-  "chromium" "obsidian" "syncthing"
-  "telegram-desktop" "vesktop"
-  "visual-studio-code-bin" "zed"
-  "krita" "steam" "zoom"
-  "obs-studio" "audacity"
+# Define package groups as a structure
+# First element of each subarray is the group title
+declare -A package_groups
+package_groups=(
+  ["A) Hyprland Required"]="hyprland xdg-desktop-portal-hyprland hyprpolkitagent"
+  ["B) Hyprland Optional"]="hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo"
+  ["C) Terminal Tools"]="zsh nano vi vim lf tmux"
+  ["D) Basic Applications"]="kitty dunst fuzzel waybar bemoji"
+  ["E) Fonts"]="ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome"
+  ["F) Terminal Utilities"]="lazygit arttime-git nvm"
+  ["G) System Utilities"]="nautilus pavucontrol vlc"
+  ["H) Applications"]="chromium obsidian syncthing telegram-desktop vesktop"
+  ["I) Development"]="visual-studio-code-bin zed"
+  ["J) Creativity"]="krita obs-studio audacity"
+  ["K) Gaming"]="steam proton-ge-custom-bin protontricks"
+  ["L) Communication"]="zoom"
 )
 
-selected=($(gum choose --no-limit "${packages[@]}"))
+# Iterate through package groups
+for group_name in "${!package_groups[@]}"; do
+  echo "Select packages from: $group_name"
+  # Convert space-separated string to array
+  read -ra packages <<<"${package_groups[$group_name]}"
 
-echo "Selected packages: ${selected[@]}"
+  # Select packages from this group
+  chosen=($(gum choose --no-limit "${packages[@]}"))
+
+  # Add chosen packages to selected list
+  if [ ${#chosen[@]} -gt 0 ]; then
+    selected+=("${chosen[@]}")
+    echo "✓ Selected ${#chosen[@]} packages from $group_name"
+  else
+    echo "✗ No packages selected from $group_name"
+  fi
+  echo
+done
+
+echo "All selected packages: ${selected[@]}"
 
 echo "Installing..."
-if [ -n "$selected" ]; then
+if [ ${#selected[@]} -gt 0 ]; then
   paru -Syu --noconfirm "${selected[@]}"
 
   if [[ " ${selected[*]} " =~ " zsh " ]]; then
@@ -58,4 +65,6 @@ if [ -n "$selected" ]; then
       echo "ZSH set as default shell. Changes will apply on next login."
     fi
   fi
+else
+  echo "No packages were selected for installation."
 fi
