@@ -34,6 +34,20 @@ fi
 
 selected=()
 
+group_order=(
+  "A) Hyprland Required"
+  "B) Hyprland Optional"
+  "C) Terminal Tools"
+  "D) Basic Applications"
+  "E) Fonts"
+  "F) System Utilities"
+  "G) Applications"
+  "H) Development"
+  "I) Creativity"
+  "J) Gaming"
+  "K) Communication"
+)
+
 declare -A package_groups
 package_groups=(
   ["A) Hyprland Required"]="hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gnome hyprpolkitagent wireplumber"
@@ -49,7 +63,7 @@ package_groups=(
   ["K) Communication"]="telegram-desktop vesktop zoom"
 )
 
-for group_name in "${!package_groups[@]}"; do
+for group_name in "${group_order[@]}"; do
   echo "Select packages from: $group_name"
   read -ra packages <<<"${package_groups[$group_name]}"
 
