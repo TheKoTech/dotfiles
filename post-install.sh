@@ -1,21 +1,39 @@
-sudo pacman -Syu --noconfirm --needed gum base-devel git
+#!/bin/bash
+
+# Debug mode flag - set to true to enable debug mode
+DEBUG_MODE=true
+
+# Function to run or log commands based on debug mode
+run_command() {
+  if [ "$DEBUG_MODE" = true ]; then
+    echo "[DEBUG] Would execute: $@"
+    return 0
+  else
+    eval "$@"
+    return $?
+  fi
+}
+
+# Show debug mode status at start
+if [ "$DEBUG_MODE" = true ]; then
+  echo "[DEBUG] Commands will be logged but not executed"
+fi
+
+run_command "sudo pacman -Syu --noconfirm --needed gum base-devel git"
 
 if ! command -v paru &>/dev/null; then
   if gum confirm "Install paru?"; then
-    cd /tmp
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
-    makepkg -si --noconfirm
+    run_command "cd /tmp"
+    run_command "git clone https://aur.archlinux.org/paru.git"
+    run_command "cd paru"
+    run_command "makepkg -si --noconfirm"
   fi
 else
   echo "Paru is already installed"
 fi
 
-# Initialize empty array for selected packages
 selected=()
 
-# Define package groups as a structure
-# First element of each subarray is the group title
 declare -A package_groups
 package_groups=(
   ["A) Hyprland Required"]="hyprland xdg-desktop-portal-hyprland hyprpolkitagent"
@@ -32,16 +50,12 @@ package_groups=(
   ["L) Communication"]="zoom"
 )
 
-# Iterate through package groups
 for group_name in "${!package_groups[@]}"; do
   echo "Select packages from: $group_name"
-  # Convert space-separated string to array
   read -ra packages <<<"${package_groups[$group_name]}"
 
-  # Select packages from this group
   chosen=($(gum choose --no-limit "${packages[@]}"))
 
-  # Add chosen packages to selected list
   if [ ${#chosen[@]} -gt 0 ]; then
     selected+=("${chosen[@]}")
     echo "✓ Selected ${#chosen[@]} packages from $group_name"
@@ -55,13 +69,13 @@ echo "All selected packages: ${selected[@]}"
 
 echo "Installing..."
 if [ ${#selected[@]} -gt 0 ]; then
-  paru -Syu --noconfirm "${selected[@]}"
+  run_command "paru -Syu --noconfirm ${selected[*]}"
 
   if [[ " ${selected[*]} " =~ " zsh " ]]; then
     echo "Setting up ZSH..."
 
     if gum confirm "Set ZSH as default shell?"; then
-      chsh -s $(which zsh)
+      run_command "chsh -s $(which zsh)"
       echo "ZSH set as default shell. Changes will apply on next login."
     fi
   fi
