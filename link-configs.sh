@@ -5,15 +5,14 @@ BKP_DIR="$SCRIPT_DIR/bkp"
 
 link() {
   if [ -L "$HOME/$1$2" ]; then
-    echo "Already linked: ~/$1$2"
+    gum style --foreground 8 "Already linked: ~/$1$2"
     return
   fi
 
   if [ -f "$HOME/$1$2" ]; then
-    read -p "File ~/$1$2 exists. Replace? (Y/n)" REPLACE
-
-    if [[ $REPLACE = "y" || $REPLACE = "Y" || $REPLACE = "" ]]; then
-      ln -sb "$SCRIPT_DIR/$1$2" "$HOME/$1$2" && echo "Linked ~/$1$2"
+    if gum confirm "File $(gum style --foreground 214 --bold "~/$1$2") exists. Replace?"; then
+      ln -sb "$SCRIPT_DIR/$1$2" "$HOME/$1$2"
+      gum style --foreground 2 "Linked ~/$1$2"
 
       if [ ! -d $BKP_DIR ]; then
         mkdir $BKP_DIR
@@ -25,12 +24,16 @@ link() {
       fi
 
       mv -b "$HOME/$1$2~" "$BKP_DIR/$1$2"
+      gum style --foreground 5 "Backup saved to $BKP_DIR/$1$2"
+    else
+      gum style --foreground 3 "Skipped ~/$1$2"
     fi
 
     return
   fi
 
-  ln -s "$SCRIPT_DIR/$1$2" "$HOME/$1$2" && echo "Linked ~/$1$2"
+  ln -s "$SCRIPT_DIR/$1$2" "$HOME/$1$2"
+  gum style --foreground 2 "Linked ~/$1$2"
 }
 
 link "" ".zshrc"
