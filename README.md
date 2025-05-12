@@ -17,3 +17,4 @@
 - [ ] set up dark theme
 - [x] set clipse config option imageDisplay.type to "kitty"
 - [ ] find a way to stay on a magic workspace even on mouse leave from the current window
+  - The `special-fallthrough` setting did work, but gotta report the bug anyway
