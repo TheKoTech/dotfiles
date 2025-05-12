@@ -36,18 +36,17 @@ selected=()
 
 declare -A package_groups
 package_groups=(
-  ["A) Hyprland Required"]="hyprland xdg-desktop-portal-hyprland hyprpolkitagent"
-  ["B) Hyprland Optional"]="hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo"
-  ["C) Terminal Tools"]="zsh nano vi vim lf tmux"
-  ["D) Basic Applications"]="kitty dunst fuzzel waybar bemoji"
+  ["A) Hyprland Required"]="hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gnome hyprpolkitagent wireplumber"
+  ["B) Hyprland Optional"]="hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo grimblast-git clipse"
+  ["C) Terminal Tools"]="zsh nano vi vim lf tmux fzf arttime-git man"
+  ["D) Basic Applications"]="kitty dunst fuzzel waybar bemoji gnome-calendar"
   ["E) Fonts"]="ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome"
-  ["F) Terminal Utilities"]="lazygit arttime-git nvm"
-  ["G) System Utilities"]="nautilus pavucontrol vlc"
-  ["H) Applications"]="chromium obsidian syncthing telegram-desktop vesktop"
-  ["I) Development"]="visual-studio-code-bin zed"
-  ["J) Creativity"]="krita obs-studio audacity"
-  ["K) Gaming"]="steam proton-ge-custom-bin protontricks"
-  ["L) Communication"]="zoom"
+  ["F) System Utilities"]="nautilus pavucontrol vlc"
+  ["G) Applications"]="chromium obsidian syncthing"
+  ["H) Development"]="visual-studio-code-bin zed lazygit nvm postman-bin"
+  ["I) Creativity"]="krita obs-studio audacity"
+  ["J) Gaming"]="steam proton-ge-custom-bin protontricks"
+  ["K) Communication"]="telegram-desktop vesktop zoom"
 )
 
 for group_name in "${!package_groups[@]}"; do
@@ -77,6 +76,12 @@ if [ ${#selected[@]} -gt 0 ]; then
     if gum confirm "Set ZSH as default shell?"; then
       run_command "chsh -s $(which zsh)"
       echo "ZSH set as default shell. Changes will apply on next login."
+    fi
+  fi
+
+  if [[ " ${selected[*]} " =~ " nvm " ]]; then
+    if gum confirm "Install latest node version?"; then
+      run_command "nvm install --lts"
     fi
   fi
 else
