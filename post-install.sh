@@ -46,7 +46,7 @@ push() {
 group_order=()
 
 push "A) Hyprland Required" hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gnome hyprpolkitagent wireplumber
-push "B) Hyprland Optional" hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo grimblast-git clipse
+push "B) Hyprland Optional" hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo grimblast-git clipse hyprpicker
 push "C) Terminal Tools" zsh nano vi vim lf tmux fzf arttime-git man
 push "D) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
 push "E) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
@@ -91,10 +91,17 @@ if [ ${#selected[@]} -gt 0 ]; then
     fi
   fi
 
-  if [[ " ${selected[*]} " =~ " syncthing "]]; then
+  if [[ " ${selected[*]} " =~ " syncthing " ]]; then
     if gum confirm "Autostart syncthing?"; then
       run_command "systemctl --user enable syncthing"
       run_command "systemctl --user start syncthing"
+    fi
+  fi
+
+  if [[ " ${selected[*]} " =~ " hyprpolkitagent " ]]; then
+    if gum confirm "Autostart hyprpolkitagent?"; then
+      run_command "systemctl --user enable hyprpolkitagent.service"
+      run_command "systemctl --user start hyprpolkitagent.service"
     fi
   fi
 else
