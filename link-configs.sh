@@ -63,3 +63,8 @@ link ".config/lf/" "lfrc"
 
 link ".config/waybar/" "config.jsonc"
 link ".config/waybar/" "style.css"
+
+MONITORS=".config/hypr/monitors.conf"
+if gum confirm "Update monitor configuration?"; then
+  cp -f "$SCRIPT_DIR/$MONITORS" "$HOME/$MONITORS"
+fi
