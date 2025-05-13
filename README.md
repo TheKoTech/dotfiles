@@ -9,13 +9,16 @@
 - [ ] split packages into groups (not tested)
 - [x] make paru optional
 - [x] apply configs
-- [ ] run nvm install --lts
+- [x] run nvm install --lts
 - [ ] add docker and run systemctl enable & start
-- [ ] add syncthing, update autostart via systemctl
-- [ ] add nginx, clipse, pgadmin, postman, wireplumber, fzf, gnome-calendar, man
-- [ ] check if grimblast installs
+- [ ] add pgadmin
+- [ ] check if grimblast installs correctly
 - [ ] set up dark theme
 - [x] set clipse config option imageDisplay.type to "kitty"
 - [ ] find a way to stay on a magic workspace even on mouse leave from the current window
   - The `special-fallthrough` setting did work, but gotta report the bug anyway
-- Separate monitor configuration from `hyprland.conf`
+- [x] Separate monitor configuration from `hyprland.conf`
+- [ ] Make monitor configuration semi-automatic: find names (probably without hyprctl to allow setting them up without hyprland running), compose the monitors.conf from user input and all that
+- [ ] Consider migrating to Quickshell from waybar
+- [ ] Nginx config?
+- [ ] run `link-configs.sh` after `post-install.sh`

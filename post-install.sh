@@ -50,9 +50,9 @@ push "B) Hyprland Optional" hyprlock hyprshot-git hyprsunset hyprcursor hyprsyst
 push "C) Terminal Tools" zsh nano vi vim lf tmux fzf arttime-git man
 push "D) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
 push "E) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
-push "F) System Utilities" nautilus pavucontrol vlc
+push "F) System Utilities" nautilus pavucontrol vlc network-manager-applet
 push "G) Applications" chromium obsidian syncthing
-push "H) Development" visual-studio-code-bin zed lazygit nvm postman-bin
+push "H) Development" visual-studio-code-bin zed lazygit nvm postman-bin nginx
 push "I) Creativity" krita obs-studio audacity
 push "J) Gaming" steam proton-ge-custom-bin protontricks
 push "K) Communication" telegram-desktop vesktop zoom
@@ -88,6 +88,13 @@ if [ ${#selected[@]} -gt 0 ]; then
   if [[ " ${selected[*]} " =~ " nvm " ]]; then
     if gum confirm "Install latest node version?"; then
       run_command "nvm install --lts"
+    fi
+  fi
+
+  if [[ " ${selected[*]} " =~ " syncthing "]]; then
+    if gum confirm "Autostart syncthing?"; then
+      run_command "systemctl --user enable syncthing"
+      run_command "systemctl --user start syncthing"
     fi
   fi
 else
