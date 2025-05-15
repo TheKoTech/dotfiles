@@ -1,0 +1,55 @@
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette
+
+{
+  "git_panel": {
+    "dock": "right"
+  },
+  "icon_theme": "VSCode Icons (Dark)",
+  "assistant": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "mistral:7b"
+    },
+    "version": "2"
+  },
+  "autosave": "on_focus_change",
+  "show_completions_on_input": true,
+  // "features": {
+  //   "inline_completion_provider": "zed"
+  // },
+  "vim_mode": true,
+  "vim": {
+    "use_multiline_find": true,
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "on_yank"
+  },
+
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 15,
+  "buffer_font_size": 14,
+  "buffer_font_weight": 300,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "VSCode Dark Modern"
+  },
+  "auto_update": false,
+  "base_keymap": "VSCode",
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "tab_size": 2,
+
+  "languages": {
+    "HTML": {
+      "language_servers": ["angular"]
+    }
+  }
+}

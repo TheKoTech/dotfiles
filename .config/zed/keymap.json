@@ -1,0 +1,74 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  // =========================
+  // ==== RANDOM BULLSHIT ====
+  // =========================
+
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format"
+    }
+  },
+  {
+    "bindings": {
+      "alt-1": "workspace::ToggleLeftDock",
+      "alt-2": "workspace::ToggleBottomDock",
+      "alt-3": "workspace::ToggleRightDock",
+
+      "alt-]": "pane::ActivateNextItem",
+      "alt-[": "pane::ActivatePreviousItem",
+      "ctrl-shift-q": "workspace::NewSearch"
+    }
+  },
+
+  // ==================
+  // ==== VIM MODE ====
+  // ==================
+
+  {
+    "bindings": {
+      "ctrl-k q": "workspace::ToggleVimMode"
+    }
+  },
+
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-shift-j": "editor::DuplicateLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "alt-shift-k": "editor::DuplicateLineUp",
+      "alt-l": "editor::SelectLargerSyntaxNode", // Expand Selection
+      "alt-h": "editor::SelectSmallerSyntaxNode", // Shrink Selection
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-shift-v": "editor::Paste",
+      "ctrl-shift-c": "editor::Copy"
+    }
+  },
+
+  // Sneak
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "g r": "editor::FindAllReferences",
+      "g d": "editor::GoToDefinition",
+      "s": ["vim::PushSneak", {}],
+      "S": ["vim::PushSneakBackward", {}]
+    }
+  },
+
+  // Surround
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  }
+]

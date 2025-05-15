@@ -1,0 +1,58 @@
+{
+  "Contstructor": {
+    "prefix": "ctr",
+    "body": ["constructor() {\n\t$0\n}"]
+  },
+  "Anonymous arrow function": {
+    "prefix": "afn",
+    "body": ["($1) => $0"]
+  },
+  "console.log()": {
+    "prefix": "clg",
+    "body": ["console.log($0)"]
+  },
+  "console.log({ })": {
+    "prefix": "clj",
+    "body": ["console.log({ $0 })"]
+  },
+
+  // Arrays
+  ".forEach": {
+    "prefix": [".forEach"],
+    "body": ["forEach(($1) => $0)"]
+  },
+  ".map": {
+    "prefix": [".map"],
+    "body": ["map(($1) => $0)"]
+  },
+  ".reduce": {
+    "prefix": [".reduce"],
+    "body": ["reduce((${1:acc}, ${2:prev}${3:, ${4:i}${5:, ${6:arr}}}) => $0)"]
+  },
+  ".filter": {
+    "prefix": [".filter"],
+    "body": ["filter(($1) => $2)$0"]
+  },
+  ".find": {
+    "prefix": [".find"],
+    "body": ["find(($1) => ${0:$TM_SELECTED_TEXT})"]
+  },
+  ".some": {
+    "prefix": [".some"],
+    "body": ["some(($1) => ${0:$TM_SELECTED_TEXT})"]
+  },
+
+  // Angular
+  "signal": {
+    "prefix": ["sig"],
+    "body": ["signal${1:<$2>}($0)"]
+  },
+  "effect": {
+    "prefix": ["eff"],
+    "body": ["effect(() => $0)"]
+  },
+  "computed": {
+    "prefix": ["com"],
+    "body": ["computed${1:<$2>}(() => $0)"]
+  }
+}
