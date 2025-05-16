@@ -52,7 +52,35 @@
     "body": ["effect(() => $0)"]
   },
   "computed": {
-    "prefix": ["com"],
+    "prefix": ["cmp"],
     "body": ["computed${1:<$2>}(() => $0)"]
+  },
+
+  // Angular: testing
+  "beforeEach": {
+    "prefix": ["beach"],
+    "body": ["beforeEach(() => $0)"]
+  },
+  "it": {
+    "prefix": ["it"],
+    "body": [
+      //
+      "it('$1', () => {",
+      "\t$0",
+      "})"
+    ]
+  },
+
+  "AAA": {
+    "prefix": ["aaa"],
+    "body": [
+      //
+      "// arrange",
+      "$0",
+      "",
+      "// act",
+      "",
+      "// assert"
+    ]
   }
 }

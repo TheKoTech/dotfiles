@@ -24,19 +24,14 @@
 
       "alt-]": "pane::ActivateNextItem",
       "alt-[": "pane::ActivatePreviousItem",
-      "ctrl-shift-q": "workspace::NewSearch"
+      "ctrl-shift-q": "workspace::NewSearch",
+      "ctrl-k q": "workspace::ToggleVimMode"
     }
   },
 
   // ==================
   // ==== VIM MODE ====
   // ==================
-
-  {
-    "bindings": {
-      "ctrl-k q": "workspace::ToggleVimMode"
-    }
-  },
 
   {
     "context": "Editor",

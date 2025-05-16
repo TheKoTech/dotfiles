@@ -11,7 +11,7 @@
     "dock": "right"
   },
   "icon_theme": "VSCode Icons (Dark)",
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "ollama",
       "model": "mistral:7b"
@@ -20,9 +20,10 @@
   },
   "autosave": "on_focus_change",
   "show_completions_on_input": true,
-  // "features": {
-  //   "inline_completion_provider": "zed"
-  // },
+  "features": {
+    "edit_prediction_provider": null
+  },
+
   "vim_mode": true,
   "vim": {
     "use_multiline_find": true,
