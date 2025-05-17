@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Debug mode flag - set to true to enable debug mode
-DEBUG_MODE=true
+DEBUG_MODE=false
 
 # Function to run or log commands based on debug mode
 run_command() {
