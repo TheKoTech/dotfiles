@@ -47,15 +47,16 @@ group_order=()
 
 push "A) Hyprland Required" hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gnome hyprpolkitagent wireplumber
 push "B) Hyprland Optional" hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo grimblast-git clipse hyprpicker
-push "C) Terminal Tools" zsh nano vi vim lf tmux fzf arttime-git man
-push "D) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
-push "E) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
-push "F) System Utilities" nautilus pavucontrol vlc network-manager-applet
-push "G) Applications" chromium obsidian syncthing
-push "H) Development" visual-studio-code-bin zed lazygit nvm postman-bin nginx
-push "I) Creativity" krita obs-studio audacity
-push "J) Gaming" steam proton-ge-custom-bin protontricks
-push "K) Communication" telegram-desktop vesktop zoom
+push "C) Display Manager" sddm sddm-kcm qt5-declarative
+push "D) Terminal Tools" zsh nano vi vim lf tmux fzf arttime-git man
+push "E) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
+push "F) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
+push "G) System Utilities" nautilus pavucontrol vlc network-manager-applet
+push "H) Applications" chromium obsidian syncthing
+push "I) Development" visual-studio-code-bin zed lazygit nvm postman-bin nginx
+push "J) Creativity" krita obs-studio audacity
+push "K) Gaming" steam proton-ge-custom-bin protontricks
+push "L) Communication" telegram-desktop vesktop zoom
 
 for group_name in "${group_order[@]}"; do
   echo "Select packages from: $group_name"
