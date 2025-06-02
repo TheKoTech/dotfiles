@@ -1,11 +1,15 @@
 {
   "Contstructor": {
-    "prefix": "ctr",
+    "prefix": ["ctr"],
     "body": ["constructor() {\n\t$0\n}"]
   },
   "Anonymous arrow function": {
-    "prefix": "afn",
+    "prefix": ["afn"],
     "body": ["($1) => $0"]
+  },
+  "nfn": {
+    "prefix": ["nfn"],
+    "body": ["const ${1:name} = ($2) => $0"]
   },
   "console.log()": {
     "prefix": "clg",
@@ -18,7 +22,7 @@
 
   // Arrays
   ".forEach": {
-    "prefix": [".forEach"],
+    "prefix": [".for"],
     "body": ["forEach(($1) => $0)"]
   },
   ".map": {
@@ -26,19 +30,19 @@
     "body": ["map(($1) => $0)"]
   },
   ".reduce": {
-    "prefix": [".reduce"],
+    "prefix": [".red"],
     "body": ["reduce((${1:acc}, ${2:prev}${3:, ${4:i}${5:, ${6:arr}}}) => $0)"]
   },
   ".filter": {
-    "prefix": [".filter"],
+    "prefix": [".fil"],
     "body": ["filter(($1) => $2)$0"]
   },
   ".find": {
-    "prefix": [".find"],
+    "prefix": [".fin"],
     "body": ["find(($1) => ${0:$TM_SELECTED_TEXT})"]
   },
   ".some": {
-    "prefix": [".some"],
+    "prefix": [".som"],
     "body": ["some(($1) => ${0:$TM_SELECTED_TEXT})"]
   },
 
@@ -57,9 +61,21 @@
   },
 
   // Angular: testing
+  "beforeAll": {
+    "prefix": ["ball"],
+    "body": ["beforeAll(() => $0)"]
+  },
   "beforeEach": {
     "prefix": ["beach"],
     "body": ["beforeEach(() => $0)"]
+  },
+  "afterAll": {
+    "prefix": ["aall"],
+    "body": ["afterAll(() => $0)"]
+  },
+  "afterEach": {
+    "prefix": ["aeach"],
+    "body": ["afterEach(() => $0)"]
   },
   "it": {
     "prefix": ["it"],
@@ -70,17 +86,24 @@
       "})"
     ]
   },
+  "expect once": {
+    "prefix": ["ex1"],
+    "body": [
+      "expect($1).toHaveBeenCalledTimes(1)",
+      "expect($1).toHaveBeenCalledWith($0)"
+    ]
+  },
 
   "AAA": {
     "prefix": ["aaa"],
     "body": [
       //
       "// arrange",
-      "$0",
+      "\t$0",
       "",
-      "// act",
+      "\t// act",
       "",
-      "// assert"
+      "\t// assert"
     ]
   }
 }

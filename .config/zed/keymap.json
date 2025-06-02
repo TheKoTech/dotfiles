@@ -38,13 +38,16 @@
     "bindings": {
       "alt-j": "editor::MoveLineDown",
       "alt-shift-j": "editor::DuplicateLineDown",
+      "alt-ctrl-j": "editor::AddSelectionBelow", // Insert Cursor Below
       "alt-k": "editor::MoveLineUp",
       "alt-shift-k": "editor::DuplicateLineUp",
+      "alt-ctrl-k": "editor::AddSelectionAbove", // Insert Cursor Above
       "alt-l": "editor::SelectLargerSyntaxNode", // Expand Selection
       "alt-h": "editor::SelectSmallerSyntaxNode", // Shrink Selection
-      "ctrl-w": "pane::CloseActiveItem",
+      // "ctrl-w": "pane::CloseActiveItem",
       "ctrl-shift-v": "editor::Paste",
-      "ctrl-shift-c": "editor::Copy"
+      "ctrl-shift-c": "editor::Copy",
+      "ctrl-s": "workspace::Save"
     }
   },
 
