@@ -24,8 +24,13 @@
 
       "alt-]": "pane::ActivateNextItem",
       "alt-[": "pane::ActivatePreviousItem",
+
+      "alt-w": "pane::CloseActiveItem",
+
+      "ctrl-shift-p": "command_palette::Toggle",
       "ctrl-shift-q": "workspace::NewSearch",
-      "ctrl-k q": "workspace::ToggleVimMode"
+      "ctrl-k q": "workspace::ToggleVimMode",
+      "ctrl-q": ["workspace::SendKeystrokes", ""] // disables bind "zed: quit"
     }
   },
 
