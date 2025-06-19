@@ -52,7 +52,7 @@
     "body": ["signal${1:<$2>}($0)"]
   },
   "effect": {
-    "prefix": ["eff"],
+    "prefix": ["efc"],
     "body": ["effect(() => $0)"]
   },
   "computed": {
@@ -96,14 +96,6 @@
 
   "AAA": {
     "prefix": ["aaa"],
-    "body": [
-      //
-      "// arrange",
-      "\t$0",
-      "",
-      "\t// act",
-      "",
-      "\t// assert"
-    ]
+    "body": ["// arrange", "\t$0", "", "\t// act", "", "\t// assert"]
   }
 }

@@ -52,9 +52,12 @@ link ".config/hypr/" "hyprland.conf"
 link ".config/hypr/" "hyprlock.conf"
 link ".config/hypr/" "hyprpaper.conf"
 link ".config/hypr/" "hyprshot.conf"
+link ".config/hypr/" "keybinds.conf"
 
 link ".config/kitty/" "kitty.conf"
 link ".config/kitty/" "kitty-logo.png"
+
+link ".config/lazygit/" "config.yml"
 
 link ".config/lf/" "colors"
 link ".config/lf/" "icons"

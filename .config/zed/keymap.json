@@ -17,6 +17,13 @@
     }
   },
   {
+    "context": "Pane",
+    "bindings": {
+      "alt-left": "pane::GoBack",
+      "alt-right": "pane::GoForward"
+    }
+  },
+  {
     "bindings": {
       "alt-1": "workspace::ToggleLeftDock",
       "alt-2": "workspace::ToggleBottomDock",
@@ -30,7 +37,8 @@
       "ctrl-shift-p": "command_palette::Toggle",
       "ctrl-shift-q": "workspace::NewSearch",
       "ctrl-k q": "workspace::ToggleVimMode",
-      "ctrl-q": ["workspace::SendKeystrokes", ""] // disables bind "zed: quit"
+      "ctrl-q": ["workspace::SendKeystrokes", ""], // disables bind "zed: quit"
+      "ctrl-shift-w": ["workspace::SendKeystrokes", ""] // disables bind "workspace::CloseWindow"
     }
   },
 
@@ -72,6 +80,13 @@
     "context": "vim_mode == visual",
     "bindings": {
       "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "`": "workspace::OpenInTerminal"
     }
   }
 ]

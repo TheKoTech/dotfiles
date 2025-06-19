@@ -54,7 +54,7 @@ push "F) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
 push "G) System Utilities" nautilus pavucontrol vlc network-manager-applet
 push "H) Applications" chromium obsidian syncthing
 push "I) Development" visual-studio-code-bin zed lazygit nvm postman-bin nginx
-push "J) Creativity" krita obs-studio audacity
+push "J) Creativity" krita obs-studio audacity opentabletdriver
 push "K) Gaming" steam proton-ge-custom-bin protontricks
 push "L) Communication" telegram-desktop vesktop zoom
 
