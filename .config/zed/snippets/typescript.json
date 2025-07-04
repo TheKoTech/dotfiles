@@ -59,6 +59,14 @@
     "prefix": ["cmp"],
     "body": ["computed${1:<$2>}(() => $0)"]
   },
+  "inject": {
+    "prefix": ["inj"],
+    "body": ["readonly {$1:name} = inject($2:dependency)$0"]
+  },
+  "private inject": {
+    "prefix": ["pinj"],
+    "body": ["private readonly ${1:name} = inject(${2:dependency})$0"]
+  },
 
   // Angular: testing
   "beforeAll": {

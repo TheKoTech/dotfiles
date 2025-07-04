@@ -10,7 +10,7 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "openai",
-      "model": "google/gemini-2.5-flash-pre-05-20"
+      "model": "mistralai/devstral-small"
     },
     "model_parameters": [],
     "default_model": {

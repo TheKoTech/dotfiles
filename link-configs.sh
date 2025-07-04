@@ -4,6 +4,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 BKP_DIR="$SCRIPT_DIR/bkp"
 
 link() {
+  mkdir -p "$HOME/$1"
+
   if [ -L "$HOME/$1$2" ]; then
     ln -sf "$SCRIPT_DIR/$1$2" "$HOME/$1$2" && gum style --foreground 2 "~/$1$2  - linked"
     return
