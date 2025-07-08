@@ -57,6 +57,57 @@ select_applications() {
   done
 }
 
+get_app_name() {
+  case "$1" in
+    "Waybar")
+      echo "waybar"
+      ;;
+    "Hyprpaper")
+      echo "hyprpaper"
+      ;;
+    "Dunst")
+      echo "dunst"
+      ;;
+    "Clipse")
+      echo "clipse"
+      ;;
+    "Tmux")
+      echo "tmux"
+      ;;
+
+    "Bluetooth_applet")
+      echo "blueman-applet"
+      ;;
+    "Network_applet")
+      echo "nm-applet"
+      ;;
+    "Opentabletdriver")
+      echo "opentabletdriver"
+      ;;
+
+    "Kitty")
+      echo "kitty"
+      ;;
+
+    "Chromium")
+      echo "chromium"
+      ;;
+    "Zen")
+      echo "zen-browser"
+      ;;
+    "Steam")
+      echo "steam"
+      ;;
+
+    "Discord")
+      echo "vesktop"
+      ;;
+    *)
+      echo "$1"
+      ;;
+  esac
+}
+
 # converts selected app names to proper exec-once statements
 # handles special workspace assignments and flags
 generate_exec_statements() {
@@ -69,32 +120,41 @@ generate_exec_statements() {
 
     for app in "${apps[@]}"; do
       local exec_line="exec-once = "
+      local command=$(get_app_name "$app")
 
       # Handle special cases with workspace assignments
       case "$app" in
         "Telegram"|"Technogram"|"Discord")
-          exec_line+="[workspace special:magic silent] $app"
+          exec_line+="[workspace special:magic silent] $command"
           ;;
-        "kitty-tmux")
+        "Kitty")
           exec_line+="[workspace special:terminal silent] kitty -e tmux new-session -t main -s main-\$(date +%s)"
           ;;
-        "tmux-session")
+        "Chromium|Zen")
+          exec_line+="[workspace 1 silent] chromium"
+          ;;
+        "Zen")
+          exec_line+="[workspace 1 silent] zen-browser"
+          ;;
+        "Steam")
+          exec_line+="[workspace 6 silent] steam"
+          ;;
+
+        "Tmux")
           exec_line+="tmux new-session -d -s main"
           ;;
+        "Clipse")
+          exec_line+="clipse -listen"
+          ;;
+
         "dbus-screen-sharing")
           exec_line+="dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
           ;;
-        "clipse")
-          exec_line+="clipse -listen"
-          ;;
-        "chromium")
-          exec_line+="[workspace 1] chromium"
-          ;;
-        "steam")
-          exec_line+="[workspace 6] steam"
+        "Opentabletdriver")
+          exec_line+="systemctl --user start opentabletdriver"
           ;;
         *)
-          exec_line+="$app"
+          exec_line+="$command"
           ;;
       esac
 
@@ -117,16 +177,17 @@ validate_selected_apps() {
   local missing_apps=()
 
   for app in "${selected_apps[@]}"; do
+    local command=$(get_app_name "$app")
     # Skip special cases that aren't actual commands
-    case "$app" in
-      "kitty-tmux"|"tmux-session"|"dbus-screen-sharing"|"chromium"|"steam")
+    case "$command" in
+      "kitty-tmux"|"tmux-session"|"dbus-screen-sharing")
         continue
         ;;
     esac
 
     # Check if command exists
-    if ! command -v "$app" &>/dev/null; then
-      missing_apps+=("$app")
+    if ! command -v "$command" &>/dev/null; then
+      missing_apps+=("$command")
     fi
   done
 
@@ -192,11 +253,11 @@ show_summary() {
 
 # Define application groups here
 define_app_groups() {
-  push_group "Core System" waybar hyprpaper dunst clipse tmux-session
-  push_group "System Utilities" blueman-applet nm-applet dbus-screen-sharing
+  push_group "Core System" Waybar Hyprpaper Dunst Clipse Tmux
+  push_group "System Utilities" Bluetooth_applet Network_applet Opentabletdriver dbus-screen-sharing
+  push_group "Terminal Sessions" Kitty
+  push_group "Applications" Chromium Zen Steam
   push_group "Communication" Telegram Technogram Discord
-  push_group "Terminal Sessions" kitty-tmux
-  push_group "Applications" chromium steam
 }
 
 ######################
