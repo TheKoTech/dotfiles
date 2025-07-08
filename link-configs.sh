@@ -71,3 +71,7 @@ link ".config/waybar/" "style.css"
 link ".config/zed/snippets/" "typescript.json"
 link ".config/zed/" "keymap.json"
 link ".config/zed/" "settings.json"
+
+link ".config/" "kritadisplayrc"
+link ".config/" "kritadisrc"
+link ".config/" "kritadisshortcutsrc"
