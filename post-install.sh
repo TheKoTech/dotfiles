@@ -19,6 +19,10 @@ if [ "$DEBUG_MODE" = true ]; then
   echo "[DEBUG] Commands will be logged but not executed"
 fi
 
+echo "Enabling multilib..."
+run_command "sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf"
+
+echo "Installing prerequisites..."
 run_command "sudo pacman -Syu --noconfirm --needed gum base-devel git"
 
 if ! command -v paru &>/dev/null; then
@@ -108,3 +112,21 @@ if [ ${#selected[@]} -gt 0 ]; then
 else
   echo "No packages were selected for installation."
 fi
+
+if gum confirm "Enable dark mode?"; then
+  run_command "dconf write /org/gnome/desktop/interface/color-scheme \"'prefer-dark'\""
+fi
+
+if gum confirm "Link configs?"; then
+  run_command "./link-configs.sh"
+fi
+
+if gum confirm "Generate autostart?"; then
+  run_command "./link-configs.sh"
+fi
+
+if gum confirm "Apply generic monitor configuration?"; then
+  local MONITORS=".config/hypr/monitors.conf"
+  cp -f "$SCRIPT_DIR/$MONITORS" "$HOME/$MONITORS"
+fi
+

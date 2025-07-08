@@ -71,8 +71,3 @@ link ".config/waybar/" "style.css"
 link ".config/zed/snippets/" "typescript.json"
 link ".config/zed/" "keymap.json"
 link ".config/zed/" "settings.json"
-
-MONITORS=".config/hypr/monitors.conf"
-if gum confirm "Update monitor configuration?"; then
-  cp -f "$SCRIPT_DIR/$MONITORS" "$HOME/$MONITORS"
-fi
