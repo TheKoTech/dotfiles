@@ -16,8 +16,7 @@
     "default_model": {
       "provider": "openai",
       "model": "anthropic/claude-sonnet-4"
-    },
-    "version": "2"
+    }
   },
 
   "language_models": {
@@ -36,13 +35,19 @@
         },
         {
           "name": "mistralai/devstral-small",
-          "display_name": "@Devstral",
+          "display_name": "@Devstral Small",
+          "max_tokens": 128000,
+          "max_completion_tokens": 4096,
+          "max_output_tokens": 4096
+        },
+        {
+          "name": "mistralai/devstral-medium",
+          "display_name": "@Devstral Medium",
           "max_tokens": 128000,
           "max_completion_tokens": 4096,
           "max_output_tokens": 4096
         }
-      ],
-      "version": "1"
+      ]
     }
   },
 
@@ -62,7 +67,6 @@
 
   "vim_mode": true,
   "vim": {
-    "use_multiline_find": true,
     "toggle_relative_line_numbers": true,
     "use_system_clipboard": "on_yank"
   },
