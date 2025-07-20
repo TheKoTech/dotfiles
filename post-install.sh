@@ -56,12 +56,13 @@ push "D) Display Manager" sddm sddm-kcm qt5-declarative
 push "E) Terminal Tools" zsh nano vi vim btop lf tmux fzf arttime-git man vnstat
 push "F) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
 push "G) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
-push "H) System Utilities" nautilus pavucontrol vlc network-manager-applet
-push "I) Applications" chromium obsidian syncthing
-push "J) Development" visual-studio-code-bin zed lazygit diff-so-fancy nvm postman-bin nginx
-push "K) Creativity" krita obs-studio audacity opentabletdriver
-push "L) Gaming" steam proton-ge-custom-bin protontricks
-push "M) Communication" telegram-desktop vesktop zoom
+push "H) Audio" noise-suppression-for-voice ladspa rnnoise lsp-plugins
+push "I) System Utilities" nautilus pavucontrol vlc network-manager-applet
+push "J) Applications" chromium obsidian syncthing
+push "K) Development" visual-studio-code-bin zed lazygit diff-so-fancy nvm postman-bin nginx
+push "L) Creativity" krita obs-studio audacity opentabletdriver
+push "M) Gaming" steam proton-ge-custom-bin protontricks
+push "N) Communication" telegram-desktop vesktop zoom
 
 for group_name in "${group_order[@]}"; do
   echo "Select packages from: $group_name"

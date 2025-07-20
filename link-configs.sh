@@ -65,6 +65,7 @@ link ".config/lf/" "colors"
 link ".config/lf/" "icons"
 link ".config/lf/" "lfrc"
 
+
 link ".config/waybar/" "config.jsonc"
 link ".config/waybar/" "style.css"
 
@@ -75,3 +76,8 @@ link ".config/zed/" "settings.json"
 link ".config/" "kritadisplayrc"
 link ".config/" "kritadisrc"
 link ".config/" "kritadisshortcutsrc"
+
+if gum confirm "Link fifine mic pipewire output?"; then
+  link ".config/pipewire/pipewire.conf.d/" "fifine-processed-output.conf"
+fi
+
