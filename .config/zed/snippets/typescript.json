@@ -7,6 +7,10 @@
     "prefix": ["afn"],
     "body": ["($1) => $0"]
   },
+  "Anonymous async arrow function": {
+    "prefix": ["aafn"],
+    "body": ["async ($1) => $0"]
+  },
   "nfn": {
     "prefix": ["nfn"],
     "body": ["const ${1:name} = ($2) => $0"]

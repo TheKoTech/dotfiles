@@ -26,12 +26,8 @@
         {
           "name": "anthropic/claude-sonnet-4",
           "display_name": "@Claude Sonnet 4",
-          "max_tokens": 16000
-        },
-        {
-          "name": "google/gemini-2.5-flash-pre-05-20",
-          "display_name": "@Gemini 2.5 Flash",
-          "max_tokens": 64000
+          "max_tokens": 16000,
+          "max_output_tokens": 2048
         },
         {
           "name": "mistralai/devstral-small",
