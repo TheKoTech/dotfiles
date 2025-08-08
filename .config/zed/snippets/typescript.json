@@ -3,6 +3,10 @@
     "prefix": ["ctr"],
     "body": ["constructor() {\n\t$0\n}"]
   },
+  "function": {
+    "prefix": ["fn"],
+    "body": ["function ${1:name}($2) {\n\t$0\n}"]
+  },
   "Anonymous arrow function": {
     "prefix": ["afn"],
     "body": ["($1) => $0"]
@@ -22,6 +26,14 @@
   "console.log({ })": {
     "prefix": "clj",
     "body": ["console.log({ $0 })"]
+  },
+  "console.warn()": {
+    "prefix": "clw",
+    "body": ["console.log($0)"]
+  },
+  "console.error()": {
+    "prefix": "cle",
+    "body": ["console.log($0)"]
   },
 
   // Arrays
