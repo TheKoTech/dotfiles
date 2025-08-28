@@ -7,6 +7,16 @@
 // command palette
 
 {
+  "ssh_connections": [
+    {
+      "host": "tiwi",
+      "projects": [
+        {
+          "paths": ["/home/syn/services"]
+        }
+      ]
+    }
+  ],
   "agent": {
     "inline_assistant_model": {
       "provider": "openai",
@@ -63,6 +73,14 @@
           "max_tokens": 256000,
           "max_completion_tokens": 4096,
           "max_output_tokens": 4096
+        }
+      ]
+    },
+    "ollama": {
+      "available_models": [
+        {
+          "name": "gemma3n:latest",
+          "max_tokens": 128000
         }
       ]
     }
