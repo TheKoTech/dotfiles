@@ -57,9 +57,9 @@ push "E) Terminal Tools" zsh nano vi vim btop lf tmux fzf arttime-git man vnstat
 push "F) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
 push "G) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
 push "H) Audio" noise-suppression-for-voice ladspa rnnoise lsp-plugins
-push "I) System Utilities" nautilus pavucontrol vlc network-manager-applet
-push "J) Applications" chromium obsidian syncthing
-push "K) Development" visual-studio-code-bin zed lazygit diff-so-fancy nvm postman-bin nginx
+push "I) System Utilities" nautilus pavucontrol vlc network-manager-applet gnome-keyring
+push "J) Applications" zen-browser-bin chromium obsidian syncthing
+push "K) Development" visual-studio-code-bin zed lazygit git-delta nvm postman-bin nginx
 push "L) Creativity" krita obs-studio audacity opentabletdriver
 push "M) Gaming" steam proton-ge-custom-bin protontricks
 push "N) Communication" telegram-desktop vesktop zoom
