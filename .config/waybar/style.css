@@ -1,11 +1,11 @@
 * {
-	font-family: 'JetBrainsMono Nerd Font', serif;
+	font-family: "JetBrainsMono Nerd Font", serif;
 	font-size: 13px;
 	color: #cdd6f4;
 }
 
 window#waybar {
-	background: transparent;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 #custom-updates,
@@ -19,22 +19,12 @@ window#waybar {
 #network,
 #keyboard-state,
 #language {
-	background: rgba(0, 0, 0, 0.5);
-	margin: 6px 0 0;
 	padding: 2px 8px;
-	border-radius: 8px;
 	transition: all 0.3s ease;
 }
 
-/* A bit more padding to the right because of the icon */
-/* #pulseaudio {
-	padding-right: 10px;
-} */
-
 #window {
-	margin-top: 6px;
 	background: transparent;
-	text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
 }
 
 #window * {
@@ -42,15 +32,12 @@ window#waybar {
 }
 
 #workspaces {
-	margin-left: 4px;
+	margin-left: 8px;
 }
 
 #workspaces button {
 	all: initial;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 2px 12px;
-	margin: 6px 4px 0;
-	border-radius: 8px;
+	padding: 0 14px;
 	border: 2px solid transparent;
 	transition: all 300ms ease-out;
 }
@@ -70,15 +57,7 @@ window#waybar {
 }
 
 #tray {
-	border-radius: 8px 0 0 8px;
 	padding-left: 12px;
-}
-
-#network,
-#language,
-/* #tray, */
-#pulseaudio {
-	border-radius: 0;
 }
 
 #custom-updates,
@@ -92,20 +71,9 @@ window#waybar {
 #clock {
 	margin-right: 8px;
 	padding-right: 12px;
-	border-radius: 0 8px 8px 0;
 }
 
 #network,
 #language {
 	color: rgba(124, 177, 255, 0.933);
 }
-
-/* #custom-updates:hover,
-  #pulseaudio:hover,
-  #cpu:hover,
-  #memory:hover,
-  #battery:hover,
-  #network:hover,
-  #language:hover {
-    background: #313240;
-  } */
