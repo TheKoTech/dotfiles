@@ -7,6 +7,9 @@
 // command palette
 
 {
+  "auto_update_extensions": {
+    "scss": false
+  },
   "show_edit_predictions": false,
   "minimap": {
     "show": "always",
@@ -22,6 +25,7 @@
       ]
     }
   ],
+
   "agent": {
     "inline_assistant_model": {
       "provider": "openai",
@@ -30,7 +34,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
-      "model": "anthropic/claude-sonnet-4.5"
+      "model": "anthropic/claude-haiku-4.5"
     }
   },
 
@@ -43,6 +47,12 @@
           "display_name": "@Claude Sonnet 4.5",
           "max_tokens": 24000,
           "max_output_tokens": 2048
+        },
+        {
+          "name": "anthropic/claude-haiku-4.5",
+          "display_name": "@Claude Haiku 4.5",
+          "max_tokens": 128000,
+          "max_output_tokens": 4096
         },
         {
           "name": "mistralai/devstral-small",

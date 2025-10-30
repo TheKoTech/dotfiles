@@ -33,8 +33,8 @@ setopt histignorealldups sharehistory
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -60,7 +60,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+alias grep='rg'
+alias ls='eza -la'
+alias cat='bat --color=always'
+alias du='dust'
 alias lazy='lazygit'
 
 # You may also like to assign a key (Ctrl-O) to this command:
@@ -69,6 +72,10 @@ alias lazy='lazygit'
 lfcd () {
     # `command` is needed in case `lfcd` is aliased to `lf`
     cd "$(command lf -print-last-dir "$@")"
+}
+
+update() {
+    paru -Syu --noconfirm
 }
 
 art() {
@@ -147,3 +154,5 @@ export CHROME_BIN=/usr/bin/chromium
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+eval "$(starship init zsh)"
