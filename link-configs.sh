@@ -70,6 +70,7 @@ link ".config/waybar/" "config.jsonc"
 link ".config/waybar/" "style.css"
 
 link ".config/zed/snippets/" "typescript.json"
+link ".config/zed/themes/" "sublime-material-theme.json"
 link ".config/zed/" "keymap.json"
 link ".config/zed/" "settings.json"
 
