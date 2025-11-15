@@ -267,9 +267,9 @@
             "font_weight": null // @todo
           },
           "namespace": {
-            "color": "#dce0e5ff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#eeffff",
+            "font_style": null,
+            "font_weight": null
           },
           "number": {
             "color": "#f78c6c",
@@ -297,12 +297,17 @@
             "font_weight": null
           },
           "property": {
-            "color": "#eeffff", // @todo check
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#eeffff",
+            "font_style": null,
+            "font_weight": null
+          },
+          "property.json_key": {
+            "color": "#ffcb6b",
+            "font_style": null,
+            "font_weight": null
           },
           "punctuation": {
-            "color": "#89ddff", // @todo too blue?
+            "color": "#89ddff",
             "font_style": null,
             "font_weight": null
           },
@@ -312,34 +317,39 @@
             "font_weight": null
           },
           "punctuation.delimiter": {
-            "color": "#89ddff", // @todo what is this?
+            "color": "#89ddff",
             "font_style": null,
             "font_weight": null
           },
           "punctuation.list_marker": {
-            "color": "#89ddff", // @todo check
+            "color": "#89ddff", // @todo what is this?
             "font_style": null, // @todo
             "font_weight": null // @todo
           },
           "punctuation.markup": {
-            "color": "#89ddff", // @todo check
+            "color": "#89ddff", // @todo what is this?
             "font_style": null, // @todo
             "font_weight": null // @todo
           },
           "punctuation.special": {
-            "color": "#89ddff", // @todo check
+            "color": "#89ddff", // @todo what is this?
             "font_style": null,
             "font_weight": null
           },
           "selector": {
-            "color": "#ffcb6b", // @todo
+            "color": "#ffcb6b",
+            "font_style": null,
+            "font_weight": null
+          },
+          "selector.id": {
+            "color": "#c792ea",
             "font_style": null,
             "font_weight": null
           },
           "selector.pseudo": {
-            "color": "#74ade8ff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#c792ea",
+            "font_style": null,
+            "font_weight": null
           },
           "string": {
             "color": "#c3e88d",
@@ -386,15 +396,20 @@
             "font_style": null,
             "font_weight": null
           },
+          "type.unit": {
+            "color": "#f78c6c",
+            "font_style": null,
+            "font_weight": null
+          },
           "variable": {
-            "color": "#eeffff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#eeffff",
+            "font_style": null,
+            "font_weight": null
           },
           "variable.special": {
-            "color": "#ff0000", // @todo what is that?
-            "font_style": null, // @todo
-            "font_weight": 900 // @todo
+            "color": "#ff5370",
+            "font_style": "italic",
+            "font_weight": null
           },
           "variant": {
             "color": "#ff0000", // @todo what is that?
