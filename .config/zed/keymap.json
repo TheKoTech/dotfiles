@@ -78,7 +78,11 @@
         "vim::PushFindBackward",
         { "after": false, "multiline": true }
       ],
-      "shift-t": ["vim::PushFindBackward", { "after": true, "multiline": true }]
+      "shift-t": [
+        "vim::PushFindBackward",
+        { "after": true, "multiline": true }
+      ],
+      "\\ r": "workspace::Reload" // temp
     }
   },
 
