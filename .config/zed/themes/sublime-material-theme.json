@@ -147,7 +147,7 @@
           {
             "cursor": "#ffcc00ff",
             "background": "#ffcc00ff",
-            "selection": "#ffcc003d"
+            "selection": "#ffcc0022"
           },
           {
             "cursor": "#be5046ff", // @todo
@@ -192,7 +192,7 @@
             "font_weight": null
           },
           "boolean": {
-            "color": "#f78c6cff",
+            "color": "#f78c6c",
             "font_style": null,
             "font_weight": null
           },
@@ -203,7 +203,7 @@
           },
           "constant": {
             "color": "#f78c6c",
-            "font_style": "italic",
+            "font_style": null,
             "font_weight": null
           },
           "constructor": {
