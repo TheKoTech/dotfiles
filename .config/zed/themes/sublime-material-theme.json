@@ -1,20 +1,20 @@
 {
   "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
   "name": "Sublime Material",
-  "author": "Zed Industries",
+  "author": "Welnyr",
   "themes": [
     {
       "name": "Sublime Material Dark",
       "appearance": "dark",
       "style": {
-        "border": "#ffffff20", // @todo check
-        "border.variant": "#363c46ff", // @todo
-        "border.focused": "#47679eff", // @todo
-        "border.selected": "#293b5bff", // @todo
-        "border.transparent": "#00000000", // @todo
+        "border": "#ffffff20",
+        "border.variant": "#ffffff20",
+        "border.focused": "#ff0000", // @todo
+        "border.selected": "#ff0000", // @todo
+        "border.transparent": "#00000000",
         "border.disabled": "#414754ff", // @todo
-        "elevated_surface.background": "#2b2b2cff", // @todo
-        "surface.background": "#2b2b2cff", // @todo
+        "elevated_surface.background": "#2d2d2e",
+        "surface.background": "#2d2d2e",
         "background": "#252526ff",
         "element.background": "#2e343eff", // @todo
         "element.hover": "#363c46ff", // @todo
@@ -27,25 +27,25 @@
         "ghost_element.active": "#454a56ff", // @todo
         "ghost_element.selected": "#454a56ff", // @todo
         "ghost_element.disabled": "#2e343eff", // @todo
-        "text": "#cccccc", // @todo check
-        "text.muted": "#a9afbcff", // @todo
+        "text": "#eeffff",
+        "text.muted": "#a8a8a8",
         "text.placeholder": "#878a98ff", // @todo
         "text.disabled": "#878a98ff", // @todo
         "text.accent": "#74ade8ff", // @todo
-        "icon": "#dce0e5ff", // @todo
-        "icon.muted": "#a9afbcff", // @todo
+        "icon": "#eeffff", // @todo
+        "icon.muted": "#a8a8a8", // @todo
         "icon.disabled": "#878a98ff", // @todo
-        "icon.placeholder": "#a9afbcff", // @todo
+        "icon.placeholder": "#a8a8a8", // @todo
         "icon.accent": "#74ade8ff", // @todo
-        "status_bar.background": "#252526ff",
-        "title_bar.background": "#252526ff",
-        "title_bar.inactive_background": "#2e343eff", // @todo
+        "status_bar.background": "#1a1a1a",
+        "title_bar.background": "#1a1a1a",
+        "title_bar.inactive_background": "#1a1a1add", // @todo
         "toolbar.background": "#252526ff",
-        "tab_bar.background": "#2b2b2cff", // @todo
-        "tab.inactive_background": "#2b2b2cff", // @todo
+        "tab_bar.background": "#2d2d2e",
+        "tab.inactive_background": "#2d2d2e",
         "tab.active_background": "#252526ff",
         "search.match_background": "#74ade866", // @todo
-        "panel.background": "#2b2b2cff", // @todo
+        "panel.background": "#2d2d2e",
         "panel.focused_border": null, // @todo
         "pane.focused_border": null, // @todo
         "scrollbar.thumb.background": "#c8ccd44c", // @todo
@@ -56,9 +56,9 @@
         "editor.foreground": "#eeffff",
         "editor.background": "#252526",
         "editor.gutter.background": "#252526",
-        "editor.subheader.background": "#2b2b2cff", // @todo
-        "editor.active_line.background": "#12121288", // @todo
-        "editor.highlighted_line.background": "#2b2b2cff", // @todo ???
+        "editor.subheader.background": "#2d2d2e",
+        "editor.active_line.background": "#1a1a1a88", // @todo
+        "editor.highlighted_line.background": "#2d2d2e",
         "editor.line_number": "#858585",
         "editor.active_line_number": "#c6c6c6",
         "editor.hover_line_number": "#c6c6c6",
@@ -67,13 +67,13 @@
         "editor.active_wrap_guide": "#c8ccd41a", // @todo
         "editor.document_highlight.read_background": "#74ade81a", // @todo
         "editor.document_highlight.write_background": "#555a6366", // @todo
-        "terminal.background": "#252526ff",
-        "terminal.foreground": "#dce0e5ff", // @todo
-        "terminal.bright_foreground": "#dce0e5ff", // @todo
-        "terminal.dim_foreground": "#252526ff",
-        "terminal.ansi.black": "#252526ff",
+        "terminal.background": "#1a1a1a",
+        "terminal.foreground": "#eeffff", // @todo
+        "terminal.bright_foreground": "#eeffff", // @todo
+        "terminal.dim_foreground": "#1a1a1a",
+        "terminal.ansi.black": "#1a1a1a",
         "terminal.ansi.bright_black": "#525561ff", // @todo
-        "terminal.ansi.dim_black": "#dce0e5ff", // @todo
+        "terminal.ansi.dim_black": "#eeffff", // @todo
         "terminal.ansi.red": "#d07277ff", // @todo
         "terminal.ansi.bright_red": "#673a3cff", // @todo
         "terminal.ansi.dim_red": "#eab7b9ff", // @todo
@@ -92,13 +92,13 @@
         "terminal.ansi.cyan": "#6eb4bfff", // @todo
         "terminal.ansi.bright_cyan": "#3a565bff", // @todo
         "terminal.ansi.dim_cyan": "#b9d9dfff", // @todo
-        "terminal.ansi.white": "#dce0e5ff", // @todo
+        "terminal.ansi.white": "#eeffff", // @todo
         "terminal.ansi.bright_white": "#fafafaff", // @todo
         "terminal.ansi.dim_white": "#575d65ff", // @todo
         "link_text.hover": "#74ade8ff", // @todo
-        "version_control.added": "#27a657ff", // @todo
-        "version_control.modified": "#d3b020ff", // @todo
-        "version_control.deleted": "#e06c76ff", // @todo
+        "version_control.added": "#487e02", // @todo check
+        "version_control.modified": "#1b81a8", // @todo check
+        "version_control.deleted": "#f14c4c", // @todo check
         "version_control.conflict_marker.ours": "#a1c1811a", // @todo
         "version_control.conflict_marker.theirs": "#74ade81a", // @todo
         "conflict": "#dec184ff", // @todo
@@ -137,7 +137,7 @@
         "success": "#a1c181ff", // @todo
         "success.background": "#a1c1811a", // @todo
         "success.border": "#38482fff", // @todo
-        "unreachable": "#a9afbcff", // @todo
+        "unreachable": "#a8a8a8", // @todo
         "unreachable.background": "#8389941a", // @todo
         "unreachable.border": "#464b57ff", // @todo
         "warning": "#dec184ff", // @todo
@@ -145,9 +145,9 @@
         "warning.border": "#5d4c2fff", // @todo
         "players": [
           {
-            "cursor": "#74ade8ff", // @todo
-            "background": "#74ade8ff", // @todo
-            "selection": "#74ade83d" // @todo
+            "cursor": "#ffcc00ff",
+            "background": "#ffcc00ff",
+            "selection": "#ffcc003d"
           },
           {
             "cursor": "#be5046ff", // @todo
@@ -201,40 +201,40 @@
             "font_style": "italic",
             "font_weight": null
           },
-          "comment.doc": {
-            "color": "#546e7a", // @todo check
-            "font_style": "italic", // @todo check
-            "font_weight": null
-          },
           "constant": {
             "color": "#f78c6c",
-            "font_style": null,
+            "font_style": "italic",
             "font_weight": null
           },
           "constructor": {
-            "color": "#c792ea", // @todo
-            "font_style": null,
+            "color": "#c792ea",
+            "font_style": "italic",
             "font_weight": null
           },
           "embedded": {
-            "color": "#dce0e5ff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#eeffff", // @todo what the fuck is that
+            "font_style": null,
+            "font_weight": null
           },
           "emphasis": {
-            "color": "#74ade8ff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#82aaff",
+            "font_style": "italic",
+            "font_weight": null
           },
           "emphasis.strong": {
-            "color": "#bf956aff", // @todo
-            "font_style": null, // @todo
-            "font_weight": 700 // @todo
+            "color": "#82aaff",
+            "font_style": null,
+            "font_weight": 700
+          },
+          "emphasis.strong.emphasis": {
+            "color": "#82aaff",
+            "font_style": "italic",
+            "font_weight": 700
           },
           "enum": {
-            "color": "#eeeeff", // @todo no worky?
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#eeffff", // @todo no worky?
+            "font_style": null,
+            "font_weight": null
           },
           "function": {
             "color": "#82aaff",
@@ -242,7 +242,7 @@
             "font_weight": null
           },
           "hint": {
-            "color": "#788ca6ff", // @todo
+            "color": "#546e7a", // @todo what the hell is that
             "font_style": null, // @todo
             "font_weight": null // @todo
           },
@@ -257,14 +257,14 @@
             "font_weight": null // @todo
           },
           "link_text": {
-            "color": "#73ade9ff", // @todo
-            "font_style": "normal", // @todo
-            "font_weight": null // @todo
+            "color": "#82aaff",
+            "font_style": null,
+            "font_weight": null
           },
           "link_uri": {
-            "color": "#6eb4bfff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#f78c6c",
+            "font_style": null,
+            "font_weight": null
           },
           "namespace": {
             "color": "#eeffff",
@@ -322,17 +322,17 @@
             "font_weight": null
           },
           "punctuation.list_marker": {
-            "color": "#89ddff", // @todo what is this?
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#89ddff",
+            "font_style": null,
+            "font_weight": null
           },
           "punctuation.markup": {
-            "color": "#89ddff", // @todo what is this?
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#89ddff",
+            "font_style": null,
+            "font_weight": null
           },
           "punctuation.special": {
-            "color": "#89ddff", // @todo what is this?
+            "color": "#89ddff",
             "font_style": null,
             "font_weight": null
           },
@@ -367,17 +367,17 @@
             "font_weight": null
           },
           "string.special": {
-            "color": "#89ddff", // @todo check
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#89ddff",
+            "font_style": null,
+            "font_weight": null
           },
           "string.special.symbol": {
-            "color": "#bf956aff", // @todo
-            "font_style": null, // @todo
-            "font_weight": null // @todo
+            "color": "#89ddff", // @todo what is that?
+            "font_style": null,
+            "font_weight": null
           },
           "tag": {
-            "color": "#f07178",
+            "color": "#f78c6c",
             "font_style": null,
             "font_weight": null
           },
@@ -387,9 +387,9 @@
             "font_weight": null
           },
           "title": {
-            "color": "#ff0000", // @todo what is that?
-            "font_style": null, // @todo
-            "font_weight": 900 // @todo
+            "color": "#eeffff",
+            "font_style": null,
+            "font_weight": 600
           },
           "type": {
             "color": "#ffcb6b",
