@@ -9,29 +9,29 @@
       "style": {
         "border": "#ffffff20",
         "border.variant": "#ffffff20",
-        "border.focused": "#ff0000", // @todo
-        "border.selected": "#ff0000", // @todo
+        "border.focused": "#007fd4",
+        "border.selected": "#007fd4", // @todo what is that?
         "border.transparent": "#00000000",
-        "border.disabled": "#414754ff", // @todo
+        "border.disabled": "#ffffff38", // @todo find
         "elevated_surface.background": "#2d2d2e",
         "surface.background": "#2d2d2e",
         "background": "#252526ff",
         "element.background": "#2e343eff", // @todo
-        "element.hover": "#363c46ff", // @todo
-        "element.active": "#454a56ff", // @todo
-        "element.selected": "#454a56ff", // @todo
+        "element.hover": "#ffffff12",
+        "element.active": "#0066d450",
+        "element.selected": "#0066d450",
         "element.disabled": "#2e343eff", // @todo
-        "drop_target.background": "#83899480", // @todo
-        "ghost_element.background": "#00000000", // @todo
-        "ghost_element.hover": "#363c46ff", // @todo
-        "ghost_element.active": "#454a56ff", // @todo
-        "ghost_element.selected": "#454a56ff", // @todo
-        "ghost_element.disabled": "#2e343eff", // @todo
+        "drop_target.background": "#ffffff1c",
+        "ghost_element.background": "#00000000", // @todo what is that?
+        "ghost_element.hover": "#ffffff12", // @todo what is that?
+        "ghost_element.active": "#007fd488", // @todo what is that?
+        "ghost_element.selected": "#007fd488", // @todo what is that?
+        "ghost_element.disabled": "#2e343eff", // @todo what is that?
         "text": "#eeffff",
         "text.muted": "#a8a8a8",
-        "text.placeholder": "#878a98ff", // @todo
-        "text.disabled": "#878a98ff", // @todo
-        "text.accent": "#74ade8ff", // @todo
+        "text.placeholder": "#a8a8a8",
+        "text.disabled": "#eeffff80",
+        "text.accent": "#eeffff", // @todo
         "icon": "#eeffff", // @todo
         "icon.muted": "#a8a8a8", // @todo
         "icon.disabled": "#878a98ff", // @todo
