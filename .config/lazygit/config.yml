@@ -30,7 +30,6 @@ gui:
   #   # The number of spaces per tab; used for everything that's shown in the main view, but probably mostly relevant for diffs.
   #   # Note that when using a pager, the pager has its own tab width setting, so you need to pass it separately in the pager command.
   tabWidth: 2
-
   #   # If true, capture mouse events.
   #   # When mouse events are captured, it's a little harder to select text: e.g. requiring you to hold the option key when on macOS.
   #   mouseEvents: true
@@ -249,20 +248,20 @@ gui:
 # # Config relating to git
 git:
   #   # See https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md
-  paging:
-    ## Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
-    #colorArg: always
+  pagers:
+    - ## Value of the --color arg in the git diff command. Some pagers want this to be set to 'always' and some want it set to 'never'
+      #colorArg: always
 
-    ## e.g.
-    ## diff-so-fancy
-    ## delta --dark --paging=never
-    ## ydiff -p cat -s --wrap --width={{columnWidth}}
-    pager: "delta --dark --paging=never"
-    ## If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
-    #useConfig: false
+      ## e.g.
+      ## diff-so-fancy
+      ## delta --dark --paging=never
+      ## ydiff -p cat -s --wrap --width={{columnWidth}}
+      pager: "delta --dark --paging=never"
+      ## If true, Lazygit will use whatever pager is specified in `$GIT_PAGER`, `$PAGER`, or your *git config*. If the pager ends with something like ` | less` we will strip that part out, because less doesn't play nice with our rendering approach. If the custom pager uses less under the hood, that will also break rendering (hence the `--paging=never` flag for the `delta` pager).
+      #useConfig: false
+## e.g. 'difft --color=always'
+# externalDiffCommand: "code --diff"
 
-    ## e.g. 'difft --color=always'
-    # externalDiffCommand: "code --diff"
 #   # Config relating to committing
 #   commit:
 #     # If true, pass '--signoff' flag when committing
