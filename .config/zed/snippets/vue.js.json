@@ -1,0 +1,16 @@
+{
+  "Document": {
+    "prefix": ["doc"],
+    "body": [
+      "<script lang=\"ts\" setup>",
+      "$0",
+      "</script>",
+      "",
+      "<template>",
+      "  <span>Hello world!</span>",
+      "</template>",
+      "",
+      "<style scoped></style>"
+    ]
+  }
+}
