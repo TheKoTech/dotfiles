@@ -13,8 +13,8 @@
         "border.selected": "#007fd4", // @todo what is that?
         "border.transparent": "#00000000",
         "border.disabled": "#ffffff38", // @todo find
-        "elevated_surface.background": "#2d2d2e",
-        "surface.background": "#2d2d2e",
+        "elevated_surface.background": "#2d2d2d",
+        "surface.background": "#2d2d2d",
         "background": "#252526ff",
         "element.background": "#2e343eff", // @todo
         "element.hover": "#ffffff12",
@@ -41,24 +41,25 @@
         "title_bar.background": "#1a1a1a",
         "title_bar.inactive_background": "#1a1a1add", // @todo
         "toolbar.background": "#252526ff",
-        "tab_bar.background": "#2d2d2e",
-        "tab.inactive_background": "#2d2d2e",
+        "tab_bar.background": "#2d2d2d",
+        "tab.inactive_background": "#2d2d2d",
         "tab.active_background": "#252526ff",
         "search.match_background": "#74ade866", // @todo
-        "panel.background": "#2d2d2e",
-        "panel.focused_border": null, // @todo
-        "pane.focused_border": null, // @todo
-        "scrollbar.thumb.background": "#c8ccd44c", // @todo
-        "scrollbar.thumb.hover_background": "#363c46ff", // @todo
-        "scrollbar.thumb.border": "#363c46ff", // @todo
-        "scrollbar.track.background": "#00000000", // @todo
-        "scrollbar.track.border": "#2e333cff", // @todo
+        "panel.background": "#2d2d2d",
+        "panel.focused_border": null,
+        "pane.focused_border": null,
+        "scrollbar.thumb.background": "#ffffff1e",
+        "scrollbar.thumb.hover_background": "#ffffff28",
+        "scrollbar.thumb.active_background": "#ffffff3c",
+        "scrollbar.thumb.border": "#00000000",
+        "scrollbar.track.background": "#00000000",
+        "scrollbar.track.border": "#ffffff14",
         "editor.foreground": "#eeffff",
         "editor.background": "#252526",
         "editor.gutter.background": "#252526",
-        "editor.subheader.background": "#2d2d2e",
-        "editor.active_line.background": "#1a1a1a88", // @todo
-        "editor.highlighted_line.background": "#2d2d2e",
+        "editor.subheader.background": "#2d2d2d",
+        "editor.active_line.background": "#0000004e",
+        "editor.highlighted_line.background": "#2d2d2d",
         "editor.line_number": "#858585",
         "editor.active_line_number": "#c6c6c6",
         "editor.hover_line_number": "#c6c6c6",
