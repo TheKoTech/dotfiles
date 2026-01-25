@@ -1,105 +1,105 @@
 {
   "Contstructor": {
     "prefix": ["ctr"],
-    "body": ["constructor() {\n\t$0\n}"]
+    "body": ["constructor() {\n\t$0\n}"],
   },
   "function": {
     "prefix": ["fn"],
-    "body": ["function ${1:name}($2) {\n\t$0\n}"]
+    "body": ["function ${1:name}($2) {\n\t$0\n}"],
   },
   "Anonymous arrow function": {
     "prefix": ["afn"],
-    "body": ["($1) => $0"]
+    "body": ["($1) => $0"],
   },
   "Anonymous async arrow function": {
     "prefix": ["aafn"],
-    "body": ["async ($1) => $0"]
+    "body": ["async ($1) => $0"],
   },
   "nfn": {
     "prefix": ["nfn"],
-    "body": ["const ${1:name} = ($2) => $0"]
+    "body": ["const ${1:name} = ($2) => $0"],
   },
   "console.log()": {
     "prefix": "clg",
-    "body": ["console.log($0)"]
+    "body": ["console.log($0)"],
   },
   "console.log({ })": {
     "prefix": "clj",
-    "body": ["console.log({ $0 })"]
+    "body": ["console.log({ $0 })"],
   },
   "console.warn()": {
     "prefix": "clw",
-    "body": ["console.log($0)"]
+    "body": ["console.warn($0)"],
   },
   "console.error()": {
     "prefix": "cle",
-    "body": ["console.log($0)"]
+    "body": ["console.error($0)"],
   },
 
   // Arrays
   ".forEach": {
     "prefix": [".for"],
-    "body": ["forEach(($1) => $0)"]
+    "body": ["forEach(($1) => $0)"],
   },
   ".map": {
     "prefix": [".map"],
-    "body": ["map(($1) => $0)"]
+    "body": ["map(($1) => $0)"],
   },
   ".reduce": {
     "prefix": [".red"],
-    "body": ["reduce((${1:acc}, ${2:prev}${3:, ${4:i}${5:, ${6:arr}}}) => $0)"]
+    "body": ["reduce((${1:acc}, ${2:prev}${3:, ${4:i}${5:, ${6:arr}}}) => $0)"],
   },
   ".filter": {
     "prefix": [".fil"],
-    "body": ["filter(($1) => $2)$0"]
+    "body": ["filter(($1) => $2)$0"],
   },
   ".find": {
     "prefix": [".fin"],
-    "body": ["find(($1) => ${0:$TM_SELECTED_TEXT})"]
+    "body": ["find(($1) => ${0:$TM_SELECTED_TEXT})"],
   },
   ".some": {
     "prefix": [".som"],
-    "body": ["some(($1) => ${0:$TM_SELECTED_TEXT})"]
+    "body": ["some(($1) => ${0:$TM_SELECTED_TEXT})"],
   },
 
   // Angular
   "signal": {
     "prefix": ["sig"],
-    "body": ["signal${1:<$2>}($0)"]
+    "body": ["signal${1:<$2>}($0)"],
   },
   "effect": {
     "prefix": ["efc"],
-    "body": ["effect(() => $0)"]
+    "body": ["effect(() => $0)"],
   },
   "computed": {
     "prefix": ["cmp"],
-    "body": ["computed${1:<$2>}(() => $0)"]
+    "body": ["computed${1:<$2>}(() => $0)"],
   },
   "inject": {
     "prefix": ["inj"],
-    "body": ["readonly {$1:name} = inject($2:dependency)$0"]
+    "body": ["readonly {$1:name} = inject($2:dependency)$0"],
   },
   "private inject": {
     "prefix": ["pinj"],
-    "body": ["private readonly ${1:name} = inject(${2:dependency})$0"]
+    "body": ["private readonly ${1:name} = inject(${2:dependency})$0"],
   },
 
   // Angular: testing
   "beforeAll": {
     "prefix": ["ball"],
-    "body": ["beforeAll(() => $0)"]
+    "body": ["beforeAll(() => $0)"],
   },
   "beforeEach": {
     "prefix": ["beach"],
-    "body": ["beforeEach(() => $0)"]
+    "body": ["beforeEach(() => $0)"],
   },
   "afterAll": {
     "prefix": ["aall"],
-    "body": ["afterAll(() => $0)"]
+    "body": ["afterAll(() => $0)"],
   },
   "afterEach": {
     "prefix": ["aeach"],
-    "body": ["afterEach(() => $0)"]
+    "body": ["afterEach(() => $0)"],
   },
   "it": {
     "prefix": ["it"],
@@ -107,19 +107,19 @@
       //
       "it('$1', () => {",
       "\t$0",
-      "})"
-    ]
+      "})",
+    ],
   },
   "expect once": {
     "prefix": ["ex1"],
     "body": [
       "expect($1).toHaveBeenCalledTimes(1)",
-      "expect($1).toHaveBeenCalledWith($0)"
-    ]
+      "expect($1).toHaveBeenCalledWith($0)",
+    ],
   },
 
   "AAA": {
     "prefix": ["aaa"],
-    "body": ["// arrange", "\t$0", "", "\t// act", "", "\t// assert"]
-  }
+    "body": ["// arrange", "\t$0", "", "\t// act", "", "\t// assert"],
+  },
 }
