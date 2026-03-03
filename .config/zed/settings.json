@@ -12,17 +12,17 @@
       "settings": {
         "typescript": {
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
+            "enabled": "always",
+          },
         },
         "javascript": {
           "updateImportsOnFileMove": {
-            "enabled": "always"
-          }
-        }
+            "enabled": "always",
+          },
+        },
       },
-      "enable_lsp_tasks": true
-    }
+      "enable_lsp_tasks": true,
+    },
   },
   "auto_update_extensions": {
     "scss": false,
@@ -51,7 +51,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
-      "model": "anthropic/claude-sonnet-4.5",
+      "model": "anthropic/claude-sonnet-4.6",
     },
   },
 
@@ -69,8 +69,8 @@
       "api_url": "https://api.vsegpt.ru/v1",
       "available_models": [
         {
-          "name": "anthropic/claude-sonnet-4.5",
-          "display_name": "@Claude Sonnet 4.5",
+          "name": "anthropic/claude-sonnet-4.6",
+          "display_name": "@Claude Sonnet 4.6",
           "max_tokens": 24000,
           "max_output_tokens": 2048,
         },
@@ -81,17 +81,9 @@
           "max_output_tokens": 4096,
         },
         {
-          "name": "mistralai/devstral-small",
-          "display_name": "@Devstral Small",
+          "name": "google/gemini-3-flash-pre",
+          "display_name": "Gemini 3 Flash Preview",
           "max_tokens": 128000,
-          "max_completion_tokens": 4096,
-          "max_output_tokens": 4096,
-        },
-        {
-          "name": "mistralai/devstral-medium",
-          "display_name": "@Devstral Medium",
-          "max_tokens": 128000,
-          "max_completion_tokens": 4096,
           "max_output_tokens": 4096,
         },
         {
