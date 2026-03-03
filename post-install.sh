@@ -53,11 +53,11 @@ push "A) Hyprland Required" hyprland xdg-desktop-portal-hyprland xdg-desktop-por
 push "B) Hyprland Optional" hyprlock hyprshot-git hyprsunset hyprcursor hyprsysteminfo grimblast-git clipse hyprpicker
 push "C) AMD" rocm-smi-libs
 push "D) Display Manager" sddm sddm-kcm qt5-declarative
-push "E) Terminal Tools" zsh nano vi vim btop lf tmux fzf arttime-git man vnstat
+push "E) Terminal Tools" zsh nano vi vim btop lf tmux fzf arttime-git man vnstat eza ripgrep
 push "F) Basic Applications" kitty dunst fuzzel waybar bemoji gnome-calendar
 push "G) Fonts" ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-font-awesome
 push "H) Audio" noise-suppression-for-voice ladspa rnnoise lsp-plugins
-push "I) System Utilities" nautilus pavucontrol vlc network-manager-applet gnome-keyring
+push "I) System Utilities" nautilus pavucontrol vlc network-manager-applet gnome-keyring wl-clipboard
 push "J) Applications" zen-browser-bin chromium obsidian syncthing
 push "K) Development" visual-studio-code-bin zed lazygit git-delta nvm postman-bin nginx
 push "L) Creativity" krita obs-studio audacity opentabletdriver
