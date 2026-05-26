@@ -156,3 +156,15 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(starship init zsh)"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# pnpm
+export PNPM_HOME="/home/welnyr/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

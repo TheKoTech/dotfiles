@@ -7,6 +7,16 @@
 // command palette
 
 {
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
   "lsp": {
     "vtsls": {
       "settings": {
@@ -29,7 +39,7 @@
   },
   "show_edit_predictions": false,
   "minimap": {
-    "show": "always",
+    "show": "auto",
     "display_in": "all_editors",
   },
   "ssh_connections": [
@@ -44,14 +54,39 @@
   ],
 
   "agent": {
+    "dock": "right",
+    "thinking_display": "always_collapsed",
+    "single_file_review": false,
+    "enable_feedback": false,
+    "show_turn_stats": true,
+    "flexible": false,
+    "message_editor_min_lines": 6,
+    "use_modifier_to_send": true,
+    "default_profile": "none",
+    "profiles": {
+      "none": {
+        "name": "None",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {},
+      },
+    },
     "inline_assistant_model": {
       "provider": "openai",
-      "model": "mistralai/devstral-small",
+      "model": "moonshotai/kimi-k2.6",
     },
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
       "model": "anthropic/claude-sonnet-4.6",
+    },
+    "thread_summary_model": {
+      "provider": "openai",
+      "model": "google/gemma-4-31b-it",
+    },
+    "commit_message_model": {
+      "provider": "openai",
+      "model": "google/gemma-4-31b-it",
     },
   },
 
@@ -70,41 +105,27 @@
       "available_models": [
         {
           "name": "anthropic/claude-sonnet-4.6",
-          "display_name": "@Claude Sonnet 0.4 / 2.0",
+          "display_name": "@Claude Sonnet | 0.4 / 2.0",
           "max_tokens": 24000,
-          "max_output_tokens": 2048,
+          // "max_output_tokens": 2048,
         },
         {
-          "name": "anthropic/claude-haiku-4.5",
-          "display_name": "@Claude Haiku 0.14 / 0.70",
-          "max_tokens": 128000,
+          "name": "moonshotai/kimi-k2.6",
+          "display_name": "@Kimi K2.6 | 0.27 / 1.2",
+          "max_tokens": 32000,
           "max_output_tokens": 4096,
         },
         {
-          "name": "minimax/minimax-m2.5",
-          "display_name": "@MiniMax | 0.045 / 0.18",
-          "max_tokens": 128000,
-          "max_output_tokens": 4096,
+          "name": "google/gemma-4-31b-it-thinking",
+          "display_name": "@Gemma 4 🧠 | 0.045 / 0.13",
+          "max_tokens": 260000,
+          "max_output_tokens": 8192,
         },
         {
-          "name": "z-ai/glm-5",
-          "display_name": "@GLM 5 | 0.045 / 0.39",
-          "max_tokens": 128000,
-          "max_output_tokens": 4096,
-        },
-        {
-          "name": "qwen/qwen3.5-397b-a17b",
-          "display_name": "@Qwen 3.5 | 0.09 / 0.54",
-          "max_tokens": 128000,
-          "max_output_tokens": 4096,
-        },
-      ],
-    },
-    "ollama": {
-      "available_models": [
-        {
-          "name": "gemma3n:latest",
-          "max_tokens": 128000,
+          "name": "google/gemma-4-31b-it",
+          "display_name": "@Gemma 4 | 0.045 / 0.13",
+          "max_tokens": 260000,
+          "max_output_tokens": 8192,
         },
       ],
     },
