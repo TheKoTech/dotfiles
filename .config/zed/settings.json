@@ -11,12 +11,6 @@
   "project_panel": {
     "dock": "left",
   },
-  "outline_panel": {
-    "dock": "left",
-  },
-  "collaboration_panel": {
-    "dock": "left",
-  },
   "lsp": {
     "vtsls": {
       "settings": {
@@ -39,7 +33,7 @@
   },
   "show_edit_predictions": false,
   "minimap": {
-    "show": "auto",
+    "show": "always",
     "display_in": "all_editors",
   },
   "ssh_connections": [
@@ -55,38 +49,18 @@
 
   "agent": {
     "dock": "right",
-    "thinking_display": "always_collapsed",
-    "single_file_review": false,
-    "enable_feedback": false,
-    "show_turn_stats": true,
+    "sidebar_side": "left",
+    "default_profile": "minimal",
     "flexible": false,
-    "message_editor_min_lines": 6,
     "use_modifier_to_send": true,
-    "default_profile": "none",
-    "profiles": {
-      "none": {
-        "name": "None",
-        "tools": {},
-        "enable_all_context_servers": false,
-        "context_servers": {},
-      },
-    },
     "inline_assistant_model": {
       "provider": "openai",
-      "model": "moonshotai/kimi-k2.6",
+      "model": "mistralai/devstral-small",
     },
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
       "model": "anthropic/claude-sonnet-4.6",
-    },
-    "thread_summary_model": {
-      "provider": "openai",
-      "model": "google/gemma-4-31b-it",
-    },
-    "commit_message_model": {
-      "provider": "openai",
-      "model": "google/gemma-4-31b-it",
     },
   },
 
@@ -105,27 +79,27 @@
       "available_models": [
         {
           "name": "anthropic/claude-sonnet-4.6",
-          "display_name": "@Claude Sonnet | 0.4 / 2.0",
+          "display_name": "@Claude Sonnet 4.6",
           "max_tokens": 24000,
-          // "max_output_tokens": 2048,
+          "max_output_tokens": 2048,
         },
         {
-          "name": "moonshotai/kimi-k2.6",
-          "display_name": "@Kimi K2.6 | 0.27 / 1.2",
-          "max_tokens": 32000,
-          "max_output_tokens": 4096,
-        },
-        {
-          "name": "google/gemma-4-31b-it-thinking",
-          "display_name": "@Gemma 4 🧠 | 0.045 / 0.13",
-          "max_tokens": 260000,
+          "name": "google/gemini-3.1-flash-lite-thinking",
+          "display_name": "@Gemini 3.1 Flash Lite",
+          "max_tokens": 100000,
           "max_output_tokens": 8192,
+          "capabilities": {
+            // "chat_completions": true,
+            "images": true,
+          },
         },
+      ],
+    },
+    "ollama": {
+      "available_models": [
         {
-          "name": "google/gemma-4-31b-it",
-          "display_name": "@Gemma 4 | 0.045 / 0.13",
-          "max_tokens": 260000,
-          "max_output_tokens": 8192,
+          "name": "gemma3n:latest",
+          "max_tokens": 128000,
         },
       ],
     },
@@ -134,7 +108,11 @@
   "git_panel": {
     "dock": "right",
   },
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "VSCode Icons for Zed (Dark)",
+    "dark": "VSCode Icons for Zed (Dark)"
+  },
   "autosave": "on_focus_change",
   "show_completions_on_input": true,
 
@@ -160,7 +138,7 @@
   "buffer_font_weight": 300,
 
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
     "dark": "Sublime Material Dark",
   },
