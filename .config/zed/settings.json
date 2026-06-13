@@ -60,7 +60,7 @@
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
-      "model": "anthropic/claude-sonnet-4.6",
+      "model": "google/gemini-3.1-flash-lite-thinking",
     },
   },
 
