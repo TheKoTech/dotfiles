@@ -63,7 +63,8 @@ hl.bind("SUPER + f2", hl.dsp.focus({ workspace = 7 }))
 hl.bind("SUPER + f3", hl.dsp.focus({ workspace = 8 }))
 hl.bind("SUPER + f4", hl.dsp.focus({ workspace = 9 }))
 hl.bind("SUPER + f5", hl.dsp.focus({ workspace = 10 }))
-hl.bind("SUPER + D", hl.dsp.workspace.swap_monitors({ monitor1 = "left", monitor2 = "right" }))
+hl.bind("SUPER + D",
+  hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = 2 }))
 
 hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))

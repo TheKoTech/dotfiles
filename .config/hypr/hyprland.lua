@@ -1,5 +1,5 @@
 local function file_exists(name)
-  local file = io.open("~/.config/hypr/" .. name, "r")
+  local file = io.open("/home/welnyr/.config/hypr/" .. name, "r")
 
   if file ~= nil then
     io.close(file)
@@ -12,18 +12,17 @@ end
 require("_animations")
 require("_keybinds")
 
-if (file_exists("_autostart")) then
+if (file_exists("_autostart.lua")) then
   require("_autostart")
 end
 
-if (file_exists("_monitors")) then
+if (file_exists("_monitors.lua")) then
   require("_monitors")
 end
 
-if (file_exists("_cursor")) then
+if (file_exists("_cursor.lua")) then
   require("_cursor")
 end
-
 
 hl.config({
   general = {
@@ -34,7 +33,7 @@ hl.config({
       active_border = { colors = { "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(3366FFee)", "rgba(590900ee)", "rgba(ff5c16ee)" }, angle = 23 },
       inactive_border = "rgba(ffffff40)",
       nogroup_border_active = { colors = { "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(33ccffee)", "rgba(3366FFee)", "rgba(590900ee)", "rgba(ff5c16ee)" }, angle = 23 },
-      nogroup_border_ = "rgba(ffffff40)",
+      nogroup_border = "rgba(ffffff40)",
     },
   },
 
@@ -53,7 +52,6 @@ hl.config({
       enabled = true,
       size = 12,
       passes = 3,
-      xray = true,
       brightness = 1.25,
       vibrancy = 0.1696,
       vibrancy_darkness = 0.2,
@@ -62,7 +60,6 @@ hl.config({
 
   dwindle = {
     preserve_split = true,
-    smart_split = true,
   },
 
   input = {

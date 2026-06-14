@@ -56,6 +56,13 @@ link ".config/hypr/" "hyprpaper.conf"
 link ".config/hypr/" "hyprshot.conf"
 link ".config/hypr/" "keybinds.conf"
 
+link ".config/hypr/" "hyprland.lua"
+link ".config/hypr/" "monitors.lua"
+link ".config/hypr/" "keybinds.lua"
+link ".config/hypr/" "autostart.lua"
+link ".config/hypr/" "cursor.lua"
+link ".config/hypr/" "animations.lua"
+
 link ".config/kitty/" "kitty.conf"
 link ".config/kitty/" "kitty-logo.png"
 
@@ -81,4 +88,3 @@ link ".config/" "kritadisshortcutsrc"
 if gum confirm "Link fifine mic pipewire output?"; then
   link ".config/pipewire/pipewire.conf.d/" "fifine-processed-output.conf"
 fi
-

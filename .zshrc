@@ -159,7 +159,7 @@ eval "$(starship init zsh)"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # pnpm
 export PNPM_HOME="/home/welnyr/.local/share/pnpm"
