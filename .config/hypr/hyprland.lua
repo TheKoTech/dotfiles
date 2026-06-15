@@ -9,19 +9,19 @@ local function file_exists(name)
   end
 end
 
-require("_animations")
-require("_keybinds")
+require("animations")
+require("keybinds")
 
-if (file_exists("_autostart.lua")) then
-  require("_autostart")
+if (file_exists("autostart.lua")) then
+  require("autostart")
 end
 
-if (file_exists("_monitors.lua")) then
-  require("_monitors")
+if (file_exists("monitors.lua")) then
+  require("monitors")
 end
 
-if (file_exists("_cursor.lua")) then
-  require("_cursor")
+if (file_exists("cursor.lua")) then
+  require("cursor")
 end
 
 hl.config({
@@ -77,6 +77,14 @@ hl.config({
       natural_scroll = false,
       scroll_factor = .5,
     },
+  },
+
+  misc = {
+    force_default_wallpaper = -1,
+    disable_hyprland_logo = false,
+    enable_anr_dialog = false,
+    vrr = true,
+    middle_click_paste = false
   },
 })
 

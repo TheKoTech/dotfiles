@@ -1,7 +1,3 @@
-local script_dir = debug.getinfo(1, "S").source
-
-print(script_dir)
-
 local user = os.getenv("USER")
 local file = io.open("/home/" .. user .. "/.config/hypr/autostart.lua", "w")
 
@@ -12,14 +8,14 @@ end
 
 local names = {
   essential = {
-    { "Waybar",           'waybar' },
-    { "Hyprpaper",        'hyprpaper' },
-    { "Random_wallpaper", '~/.config/hypr/randomize-wp-sh' },
-    { "Dunst",            'dunst' },
-    { "Clipse",           'clipse -listen' },
-    { "Tmux",             'tmux new-session -d -s main' },
-    { "Polkit",           'systemctl --user start hyprpolkitagent' },
-    { "Kitty",            'kitty -e tmux new-session -t main -s main-$(date +%s)', ', { workspace = "special:terminal silent" }' },
+    { "Waybar",           '"waybar"' },
+    { "Hyprpaper",        '"hyprpaper"' },
+    { "Random_wallpaper", '"~/.config/hypr/randomize-wp.sh"' },
+    { "Dunst",            '"dunst"' },
+    { "Clipse",           '"clipse -listen"' },
+    { "Tmux",             '"tmux new-session -d -s main"' },
+    { "Polkit",           '"systemctl --user start hyprpolkitagent"' },
+    { "Kitty",            '"kitty -e tmux new-session -t main -s main-$(date +%s)", { workspace = "special:terminal silent" }' },
   },
 
   optional = {
@@ -29,15 +25,16 @@ local names = {
   },
 
   apps = {
-    { "Chromium", '"chromium"',    ', { workspace = "1 silent" }' },
-    { "Zen",      '"zen-browser"', ', { workspace = "1 silent" }' },
-    { "Steam",    '"steam"',       ', { workspace = "6 silent" }' },
-    { "Discord",  '"discord"',     ', { workspace = "special:magic silent" }' },
-    { "Vesktop",  '"vesktop"',     ', { workspace = "special:magic silent" }' },
-    { "Equibop",  '"equibop"',     ', { workspace = "special:magic silent" }' },
+    { "AmneziaVPN", '"AmneziaVPN", { workspace = "5 silent" }' },
+    { "Chromium",   '"chromium", { workspace = "1 silent" }' },
+    { "Zen",        '"zen-browser", { workspace = "1 silent" }' },
+    { "Steam",      '"steam", { workspace = "6 silent" }' },
+    { "Telegram",   '"telegram", { workspace = "telegram:magic silent" }' },
+    { "Discord",    '"discord", { workspace = "special:magic silent" }' },
+    { "Vesktop",    '"vesktop", { workspace = "special:magic silent" }' },
+    { "Equibop",    '"equibop", { workspace = "special:magic silent" }' },
   },
 }
-
 
 local function make_keys(map)
   local keys = {}
@@ -80,18 +77,38 @@ local selected = {
   apps = gum_choose(keys.apps),
 }
 
-local function writeLine(text)
-  file:write(text .. '\n')
+local function writeLine(text) file:write(text .. '\n') end
+
+local function writeCommand(map, name)
+  local value = nil
+
+  for _, pair in pairs(map) do
+    if name == pair[1] then value = pair[2] end
+  end
+
+  if value == nil then return end
+
+  writeLine('  hl.exec_cmd(' .. value .. ')')
 end
 
-local function writeCommand(name)
-  writeLine
-  ('  hl.exec_cmd("' .. name .. '")')
+writeLine('hl.on("hyprland.start", function()')
+writeLine('  -- Essential')
+
+for _, item in pairs(selected.essential) do
+  writeCommand(names.essential, item)
 end
 
-writeLine('hl.on("hyprland.start", function()\n')
+writeLine('\n  -- Optional')
 
-writeCommand(selected.essential[1])
+for _, item in pairs(selected.optional) do
+  writeCommand(names.optional, item)
+end
+
+writeLine('\n  -- Apps')
+
+for _, item in pairs(selected.apps) do
+  writeCommand(names.apps, item)
+end
 
 writeLine('end)')
 file:close()

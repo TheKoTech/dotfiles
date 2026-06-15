@@ -1,7 +1,3 @@
--- binds {
---   movefocus_cycles_fullscreen = false
--- }
-
 hl.bind("SUPER + SHIFT + ALT + Q", hl.dsp.exit())
 hl.bind("SUPER + SHIFT + ALT + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + SHIFT + ALT + P", hl.dsp.exec_cmd("poweroff"))
@@ -19,7 +15,8 @@ hl.bind("SUPER + ALT + V", hl.dsp.exec_cmd("bemoji -c -n"))
 
 hl.bind("SUPER + SHIFT + ALT + G", hl.dsp.exec_cmd("kitty -e tmux new-session -t ssh -s ssh-$(date +%s)"))
 
-hl.bind("SUPER + SHIFT + X", hl.dsp.window.kill())
+hl.bind("SUPER + SHIFT + X", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + ALT + X", hl.dsp.window.kill())
 hl.bind("SUPER + Z", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 hl.bind("SUPER + X", hl.dsp.window.float())
 hl.bind("SUPER + P", hl.dsp.window.pin())
@@ -63,8 +60,8 @@ hl.bind("SUPER + f2", hl.dsp.focus({ workspace = 7 }))
 hl.bind("SUPER + f3", hl.dsp.focus({ workspace = 8 }))
 hl.bind("SUPER + f4", hl.dsp.focus({ workspace = 9 }))
 hl.bind("SUPER + f5", hl.dsp.focus({ workspace = 10 }))
-hl.bind("SUPER + D",
-  hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = 2 }))
+hl.bind("SUPER + D", hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = "left" }))
+hl.bind("SUPER + D", hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = "right" }))
 
 hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
